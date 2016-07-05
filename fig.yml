@@ -1,12 +1,17 @@
 web:
   build: .
   links:
-   - db
+   - db:db_1
+  volumes:
+   - ./public:/home/mean/public
+   - ./app:/home/mean/app
   ports:
    - "3000:3000"
-  environment: 
+   - "8080:8080"
+   - "35729:35729"
+  environment:
    NODE_ENV: development
 db:
   image: mongo
-  ports: 
+  ports:
    - "27017:27017"

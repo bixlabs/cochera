@@ -150,4 +150,4 @@ $ docker run -p 8080:8080 -p 35729:35729 -v /Users/mdl/workspace/mean-stack/mean
 ```
 
 ## License
-The Digital Garage
+Digital Garage
