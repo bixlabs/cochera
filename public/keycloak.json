@@ -1,10 +1,11 @@
 {
   "realm": "master",
-  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAns9AFDlpwUZpGozim8lWzss2KPdddbpS9rwD2yw5hxHkuokCiBQ7JDUZ/0cUxRpjFrnXcODEbnjsVwzlKDPBFkCwTU09zLPAeq5CJ96q0eFwjKlhn0ynEzVOO3VmpoEsNdKxUkk/JwLSI9NYItSmqJTpL3RQdfH7yNhCTihLSgdugwwc3e6n79bbE0D2I3ehwQNOx2gVuU529CBJ80OgD+UOZzJqG/cEstbIBmPFIer69WC9grlcKS+0mOulXBsUwq/52M5pJI62lS6dkyWt5pbkc1ratuBx44KmWNM/FabVuDmN9VsaD3sqa7cFWGA67D1Li1/svGxC1w1IOK3HeQIDAQAB",
-  "auth-server-url": "https://keycloak-leotesting.apps.thedigitalgarage.io/auth",
+  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAitwqD6gBRdY4Drih6jILgguqduVPWuUmLo5EkVoES14Tk/YRmki/HqkyXD82wirTkcdTnRFt+w0F+kDuQtcNVo229ahi7le53fkmnCiTelzKilJxG0sP02e39bQuR/uit8294A5A8MR38DBIr29eo2LGkDPDPNuPQjgCz5GyGcSQwWQCvc39DIEe3kzLF+QLkd3tS8IzGJZtLzTupXZWR/Yo4LMQ2uGlv7/cGs6S9rhPX/EPCmYO09ENehNaivuRxuXdxz++1zqzfIznu+BaIObThKPHAL65WdIoguQdUcBuz0+ltmKnQZoI6hi0D2Pjitvq7+lCiGsrvPZgZIg+LwIDAQAB",
+  "auth-server-url": "http://keycloak-mongo-test.apps.10.2.2.2.xip.io/auth",
   "ssl-required": "external",
   "resource": "cochera",
   "credentials": {
-    "secret": "49c13b15-85c3-4ff7-82dd-928cf8cf86fd"
-  }
+    "secret": "bfb617b4-7f6b-4b53-8eee-537c2d197a05"
+  },
+  "use-resource-role-mappings": true
 }

@@ -1,10 +1,10 @@
 {
   "realm": "master",
-  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtMIOUA11bnn066OV6Nzikx08jZkJQCLxqu4tMrJobcAX0VovH5C2o8TEcVIKnPyclojPKQKKPt3hW+sKyKyFU9WhitqQMFUkRLv4KnRAQNUCHgWY3v0+JVb1CswgjsRt761GoYhVLODG36M1SDXhbHmR7BC1gCE1Z8OFoJXNGF/F314pS+1tzBNyVHFHxUqWZtVxfwZErRUDpS6Bsraw/je5TABJmUK4vXjenjazYm+tGMkwvXXWfm/JW3CvyTlFp3/0hXEo3nPKUaVjPLxUh3ouqnQuOj0vsQu0dyrjoqTEfEleZeoTJjnEJElBZ+9FEfflx7q9wb/0FdEw2x0FTQIDAQAB",
-  "auth-server-url": "http://localhost:8180/auth",
+  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAitwqD6gBRdY4Drih6jILgguqduVPWuUmLo5EkVoES14Tk/YRmki/HqkyXD82wirTkcdTnRFt+w0F+kDuQtcNVo229ahi7le53fkmnCiTelzKilJxG0sP02e39bQuR/uit8294A5A8MR38DBIr29eo2LGkDPDPNuPQjgCz5GyGcSQwWQCvc39DIEe3kzLF+QLkd3tS8IzGJZtLzTupXZWR/Yo4LMQ2uGlv7/cGs6S9rhPX/EPCmYO09ENehNaivuRxuXdxz++1zqzfIznu+BaIObThKPHAL65WdIoguQdUcBuz0+ltmKnQZoI6hi0D2Pjitvq7+lCiGsrvPZgZIg+LwIDAQAB",
+  "auth-server-url": "http://keycloak-mongo-test.apps.10.2.2.2.xip.io/auth",
   "ssl-required": "external",
   "resource": "admin-cli",
   "credentials": {
-    "secret": "b852e809-3284-49b9-909c-7eb7e8723f46"
+    "secret": "a97db47f-8a52-4621-8159-8c85415520b4"
   }
 }
