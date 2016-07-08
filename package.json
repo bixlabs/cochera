@@ -53,7 +53,7 @@
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.1.0",
     "loopback-connector-mongodb": "^1.15.1",
-    "loopback-datasource-juggler": "^2.39.0",
+    "loopback-datasource-juggler": "^2.39.0"
   },
   "devDependencies": {
 
