@@ -47,7 +47,6 @@
     "grunt-contrib-cssmin": "~0.10.0",
     "grunt-nodemon": "~0.3.0",
     "grunt-concurrent": "~1.0.0",
-    "grunt-mocha-test": "~0.12.1",
     "load-grunt-tasks": "~1.0.0",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",

@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 		// clientCSS: ['public/modules/**/*.css'],
 		clientCSS: ['public/dist/application.min.css', 'public/modules/**/*.css'],
 		clientLESS:  ['public/less/**/*.less', 'public/modules/**/*.less'],
-		mochaTests: ['app/tests/**/*.js']
+		//mochaTests: ['app/tests/**/*.js']
 	};
 
 	grunt.loadNpmTasks('grunt-contrib-less');
@@ -64,7 +64,8 @@ module.exports = function(grunt) {
 			all: {
 				src: watchFiles.clientJS.concat(watchFiles.serverJS),
 				options: {
-					jshintrc: true
+					jshintrc: true,
+					force: true
 				}
 			}
 		},
@@ -204,7 +205,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['env:default', 'lint', 'concurrent:default']);
 
 	// Production Mode task(s).
-	grunt.registerTask('prod', ['env:default', 'env:prod', 'lint', 'concurrent:default']);
+	grunt.registerTask('prod', ['env:default', 'env:prod', 'lint']);
 
 	// Debug task.
 	grunt.registerTask('debug', ['lint', 'concurrent:debug']);
