@@ -160,10 +160,10 @@ module.exports = function(grunt) {
 			default: {
 				PORT: 8080,
 				chargebeeSite: 'thedigitalgarage-test',
-				chargebeeAPIKey: 'test_1XcdcdRWOQYMUdsd3VE9c1gbwdaxrj6Vj3'
+				chargebeeAPIKey: 'test_1XcdcdRWOQYMUdsd3VE9c1gbwdaxrj6Vj3',
 			},
 			prod: {
-				NODE_ENV: 'production'
+				NODE_ENV: 'production',
 			},
 			test: {
 				NODE_ENV: 'test'
@@ -172,22 +172,21 @@ module.exports = function(grunt) {
 				NODE_ENV: 'secure'
 			}
 		},
-		mochaTest: {
-			src: watchFiles.mochaTests,
-			options: {
-				reporter: 'spec',
-				require: 'server.js'
-			}
-		},
-		karma: {
-			unit: {
-				configFile: 'karma.conf.js'
-			}
-		}
+		shell: {
+		      foreman_dev: {
+		        command: 'nf start -e dev.env',
+		        options: {
+		          stdout: true,
+		          stderr: true
+		        }
+		      }
+	    }
 	});
 
 	// Load NPM tasks
 	require('load-grunt-tasks')(grunt);
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-shell');
 
 	// Making grunt default to force in order not to break the project.
 	grunt.option('force', true);
@@ -202,10 +201,11 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['env:default', 'lint', 'concurrent:default']);
+	grunt.registerTask('default', ['env:default', 'lint', 'shell:foreman_dev']);
+	//grunt.registerTask('default', ['env:default', 'lint', 'concurrent:default']);
 
 	// Production Mode task(s).
-	grunt.registerTask('prod', ['env:default', 'env:prod', 'lint']);
+	grunt.registerTask('prod', ['env:default', 'env:prod', 'lint']); //'concurrent:default']);
 
 	// Debug task.
 	grunt.registerTask('debug', ['lint', 'concurrent:debug']);

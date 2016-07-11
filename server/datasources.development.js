@@ -7,7 +7,7 @@ module.exports = {
     db: {
         name: "db",
         connector: "memory"
-    },  
+    },
     mongo: {
         name: "mongo",
         connector: "mongodb",

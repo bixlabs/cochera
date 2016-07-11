@@ -1426,7 +1426,6 @@ angular.module('app.home')
         this.keyCloakLogin= function(){
             vm.auth.loggedIn = false;
             keycloakAuth.redirectUri = window.location.origin + '/#/dashboard';
-            console.log(keycloakAuth.redirectUri);
 
             keycloakAuth.init({ onLoad: 'login-required'}).success(function () {
                keycloakAuth.login();
@@ -1443,7 +1442,7 @@ angular.module('app.home')
         function findOrCreate(){
             if(KeyAuth.authenticated){
                 return KeyAuth.loadUserInfo().success(function(profile){
-                    return Profile.findOrCreateSubscription({email:profile.email}, {}).$promise
+                    return Profile.findOrCreateSubscription({email:profile.email}, profile).$promise
                         .then(function(){
                             login({username:profile.sub});
                         });
