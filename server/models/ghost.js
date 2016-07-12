@@ -14,7 +14,7 @@ module.exports = function(Ghost) {
         password: process.env.GHOST_ADMIN_PASSWORD,
         grant_type: 'password',
         client_id: 'ghost-admin',
-        client_secret: 'not_available'
+        client_secret: 'd9d7e9fb0826'
     };
 
     function findGhostUrl(cb) {
@@ -30,7 +30,7 @@ module.exports = function(Ghost) {
     }
 
     function authRequest(cb, res) {
-        request.post(res.url + '/ghost/api/v0.1/authentication/token', {form: ghostCredentials}, function (err, res, body) {
+        request.post(process.env.GHOST_URL + '/ghost/api/v0.1/authentication/token', {form: ghostCredentials}, function (err, res, body) {
             if(!err){
                 cb(err, JSON.parse(body).access_token);
             }else{
