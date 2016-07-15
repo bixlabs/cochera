@@ -1,10 +1,10 @@
 {
   "realm": "master",
-  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn+vOdzMQ4zAFIRs6uTktY9j4SCzAEXw81erSsvwbJ0Se0FjrEIiLEjwV7mmJiQxUloTtQUyjXDedUGrKI6qKSW3l1C0uMid/u30h7Ozq+aPQrKsyGdq13W3QsNMceC0wCQp2N03xPrdOwnFr0Hspd1dlPqryBg24r2A9ESWAj2Q0V3pgz03zFcqg2l3Y9eedSdT92RwmHAYaDpHq8YhWyXZ1LYZyJJBtCLyo3w+igg0/Jc6BahP4oyq6t/7y6KI7Q3ErMk/X6X3hkKabcE673jkXxj2XnVASasMhGHJXKnEVxwPJrRmUP0wKQYgyPBo0ciJOjTkDz4zaDAanQ45rxQIDAQAB",
-  "auth-server-url": "https://keycloak-bixlabs.thedigitalgarage.io/auth",
+  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxrVg22GhFsu7lmCO/0iyo5l/uL72VfZ1ZZXAfjdXwXR+CO2lYPbQR9rQAADVwnjzghXPaQrZ2zhxsFjIl3IkSVb6rXY1PTtBcBfhlK1Nt7b/HIxO25GfA1vg6FHYl2OwtRj7Y/pTqn6PuU3GjQrcBH8VHtZ4SGzGTtPh6P0rHTbBMMYfT4nEaRYTJlLkgb1yUZ4x7L5jZ0qeMfWiV4eMhAoC2zNwvvtdLBSjOGGEC4pHBh1HIXGwJ1jpTHy65VCHNK0Qd94hzuP94+ZjED9YxfeId7oHPQoOaudjkXzeX9X4TfNcW49YnXPxP7ghRyRbGKe74pbc6L9Xi2mXE0WaqwIDAQAB",
+  "auth-server-url": "https://keycloak-bixlabs.apps.thedigitalgarage.io/auth",
   "ssl-required": "external",
   "resource": "admin-cli",
   "credentials": {
-    "secret": "1deab8f6-3989-4ae4-9443-e46c9e8a3a5b"
+    "secret": "3a2c84f8-c675-4ae0-9c9c-a9431be1f720"
   }
 }
