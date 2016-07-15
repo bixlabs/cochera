@@ -14,7 +14,7 @@ module.exports = function(Ghost) {
         password: process.env.GHOST_ADMIN_PASSWORD,
         grant_type: 'password',
         client_id: 'ghost-admin',
-        client_secret: '1b1bcef7747f'
+        client_secret: process.env.GHOST_CLIENT_SECRET
     };
 
     function findGhostUrl(cb) {
