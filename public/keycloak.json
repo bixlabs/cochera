@@ -1,10 +1,10 @@
 {
   "realm": "master",
-  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoP6eUaUtuAAYFoX20Rk6zCOHvt2AP0Pe8UsdQDe4S9xQGIfwfqiFyaQKDmQ4vLsCeFKIWrCg657V9kjKlgD6uzlGP4a3plia5fBALEXYKdiaYdyji6nbIktUA19ES2O+6V2D0ttzTH5PG3KHSdVBNhS5BDEKdvLOAzdL+KQgVzj+7mNeDBGNVudZPdUNa1Xb9TyKguZRlgace1eNJ/XmB0NDgS23B4wtF1vXGlTU2fcunY2Hkk/Gii5SuSy4T8/R9LRZU0jCZNBGp+sqF0hqqEBmCPYA51oAwYLDhLTalHm+7QodwnCE7Pz4Iqi9l5SPvjUEGMJ23dYU693Pz80H6wIDAQAB",
+  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj0pTJNfwD+dIqW6MP+Md+dTtQwX/+sIN01q52GDWGXOQb/ghQ8s7mow132lW8yizKH7rsQ5lN133u6RnJDOpQNBHAy7RBwLxWiiANMKBbhPj3Iyd+0/PHAzeKgY9OSdh1xw8d9vIxl91znXWvPhp7s0+sRdccAI0UsBBdu5snp2sDf7lYtxujZWgaJZa193XqhIpPOpOOyMY6z9IcgwbTwrZksRydh2h8wrME6i/1dfSmgq4WDipoZxCo/7MB6RWLPyTvB1BEfvTuaGsvDEPRryeBFHpOzW0n55BoYXt2ok6ASmi5ZUyNQtQs6MaHxBMRfje6fSHI0Kvfgt4BrhDJwIDAQAB",
   "auth-server-url": "https://keycloak.dg-infra.thedigitalgarage.io/auth",
   "ssl-required": "external",
   "resource": "cochera",
   "credentials": {
-    "secret": "c62e566c-3f23-4177-8206-c39179a1ba19"
+    "secret": "c02fd9fe-6d92-4a05-a0a3-2402d104f556"
   }
 }

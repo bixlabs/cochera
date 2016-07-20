@@ -133,7 +133,7 @@ angular.element(document).ready(function () {
           'app.routes',
           'app.sidebar',
           'app.navsearch',
-          'app.preloader',
+         // 'app.preloader',
           'app.loadingbar',
           'app.translate',
           'app.settings',
