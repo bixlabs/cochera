@@ -1,45 +1,74 @@
-<nav class="navbar navbar-fixed-top frontnav" role="navigation" ng-controller="HeaderController" ng-class="{flip: 50 >= top()}">
+<nav class="navbar  frontnav" role="navigation" ng-controller="HeaderController">
+<!--<nav class="navbar  frontnav" role="navigation" ng-controller="HeaderController" ng-class="{flip: 50 >= top()}">-->
   <div class="container" scroll-position="scroll">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand visible-xs" href="/" >
-        <img style="width: 32px;" ng-src="{{ brandSmall }}"/>
-      </a>
-      <a class="navbar-brand hidden-xs" href="/" style="padding-top: 10px;">
-        <img style="width: 200px;" ng-src="{{ brand }}"/>
-      </a>
+    <div class="row">
+      <div class="navbar-header col-md-9">
+        <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand brand-logo-collapsed visible-xs" href="/">
+          <img ng-src="{{ brandSmall }}"/>
+        </a>
+        <a class="navbar-brand brand-logo hidden-xs" href="/">
+          <img ng-src="{{ brand }}"/>
+        </a>
+      </div>
+
+       <div class="navbar-search-input col-md-2">
+          <div class="input-group">
+              <input type="text" class="search-query form-control " placeholder="Search" />
+              <span class="input-group-btn">
+                  <button class="btn " type="button">
+                      <span class="fa fa-search"></span>
+                  </button>
+              </span>
+          </div>
+      </div>
     </div>
-    <!-- <div class="collapse navbar-collapse" collapse="isCollapsed"> -->
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown" dropdown>
-          <a href="#">Features</a>
+  </div>
+
+  <div class="collapse navbar-collapse" collapse="isCollapsed">
+    <!--<div class="collapse navbar-collapse">-->
+    <div class="container">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown active" dropdown>
+          <a href="#">HOME</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
-          <a href="#">Pricing</a>
+          <a href="#">ABOUT US</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
-          <a href="#">Community</a>
+          <a href="#">SOLUTIONS</a>
         </li>
+        <li class="dropdown ng-scope" dropdown>
+          <a href="#">SERVICES</a>
+        </li>
+        <li class="dropdown ng-scope" dropdown>
+          <a href="#">CONTACTS</a>
+        </li>
+        <li class="dropdown ng-scope" dropdown>
+          <a href="#">BLOG</a>
+        </li>
+        <!--
         <li class="dropdown ng-scope" dropdown>
           <a ng-click="keyLogin()">Login</a>
         </li>
         <li class="dropdown" dropdown>
-          <!--<a id="signup" ng-click="register()">Sign Up</a> -->
+          <a id="signup" ng-click="register()">Sign Up</a>
             <a id="signup" href="{{registerUrl}}">Sign Up</a>
 
         </li>
+        -->
         <!--
         <li class="dropdown" dropdown>
           <a href="#" ng-click="logoutKeyCloak();">Logout</a>
         </li>
         -->
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div>
+    </div>
+  </div><!-- /.navbar-collapse -->
+
 </nav>

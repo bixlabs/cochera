@@ -15,8 +15,8 @@
           'mobile':                 480
         })
         .constant('APP_BRAND', {
-            SMALL : 'modules/core/img/brand/sm_dg_symbol_light.png',
-            BIG : 'modules/core/img/brand/dg_full_light.png'
+            SMALL : 'modules/core/img/brand/dg-full.png',
+            BIG : 'modules/core/img/brand/dg-full.png'
         })
         .constant('DATE_FORMATS', {
             EN_DATE_TIME : "MM/dd/yyyy 'at' h:mm a"

@@ -47,7 +47,8 @@
     "angular-toastr": "1.6.0",
     "iso-3166-country-codes-angular": "~1.1.1",
     "lodash": "^4.10.0",
-    "keycloak": "^1.9.3"
+    "keycloak": "^1.9.3",
+    "angularjs-slider": "^5.4.1"
   },
   "resolutions": {
     "angular": "1.4.7",

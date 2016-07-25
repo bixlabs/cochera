@@ -148,7 +148,7 @@ angular.element(document).ready(function () {
     'use strict';
 
     // Use Applicaion configuration module to register a new module
-    ApplicationConfiguration.registerModule('app.home',[ ]);
+    ApplicationConfiguration.registerModule('app.home', ['rzModule']);
 })();
 (function() {
     'use strict';
@@ -304,8 +304,8 @@ ApplicationConfiguration.registerModule('page');
           'mobile':                 480
         })
         .constant('APP_BRAND', {
-            SMALL : 'modules/core/img/brand/sm_dg_symbol_light.png',
-            BIG : 'modules/core/img/brand/dg_full_light.png'
+            SMALL : 'modules/core/img/brand/dg-full.png',
+            BIG : 'modules/core/img/brand/dg-full.png'
         })
         .constant('DATE_FORMATS', {
             EN_DATE_TIME : "MM/dd/yyyy 'at' h:mm a"
@@ -1198,7 +1198,109 @@ angular
 angular.module('app.home').controller('HomeController', ['$scope',
   function ($scope) {
 
-	$scope.top = {
+    $scope.slides = [
+                {
+                    img : 'modules/home/img/big/big1.jpg',
+                    title : 'OPEN',
+                    text: 'Open source technolsogy provides a range of deployment options with no restrictions.',
+                    btnLabel : 'Sign Up',
+                    btnHref : '#'
+                },
+                {
+                    img : 'modules/home/img/big/big2.jpg',
+                    title: 'ACCESIBLE',
+                    text : 'Cloud-based platform for easy management of your developments projects with transparent pricing and usage without long approval cycles.',
+                    btnLabel : 'Sign Up',
+                    btnHref : '#'
+                },
+                {
+                    img : 'modules/home/img/big/big3.jpg',
+                    title: 'SIMPLE',
+                    text : 'Anyone can create a DevOps enviroment with aesy one-clicks installs.',
+                    btnLabel : 'Sign Up',
+                    btnHref : '#'
+                },
+
+            ];
+
+    $scope.slider_plan = {
+            value: 1,
+            options: {
+                hideLimitLabels: true,
+                showTicksValues: true,
+                stepsArray: [
+                  {value: 1, legend: 'Simple'},
+                  {value: 2, legend: 'Standard'},
+                  {value: 3, legend: 'Plus'},
+                  {value: 4, legend: 'Pro'}
+                ],
+                translate: function(value) {
+                  return '';
+                },
+                onChange: function () {
+                    $scope.plan_info.total = $scope.slider_callbacks.value * 2;
+                }
+            }
+        };
+
+    $scope.plan_info = {
+        total: 5
+    }
+
+/*
+    $scope.slider_memory = {
+        value: 3,
+        options: {
+            ceil: 10,
+            floor: 0,
+            showTicks: true,
+            hideLimitLabels: true,
+            translate: function(value) {
+              return '';
+            }
+        }
+    };
+
+    $scope.slider_cpu = {
+        value: 3,
+        options: {
+            ceil: 10,
+            floor: 0,
+            showTicks: true,
+            hideLimitLabels: true,
+            translate: function(value) {
+              return '';
+            }
+        }
+    };
+
+    $scope.slider_storage = {
+        value: 3,
+        options: {
+            ceil: 10,
+            floor: 0,
+            showTicks: true,
+            hideLimitLabels: true,
+            translate: function(value) {
+              return '';
+            }
+        }
+    };
+
+    $scope.slider_datatransfer = {
+        value: 3,
+        options: {
+            ceil: 10,
+            floor: 0,
+            showTicks: true,
+            hideLimitLabels: true,
+            translate: function(value) {
+              return '';
+            }
+        }
+    };
+*/
+	/*$scope.top = {
 		backstretch: [
 			'modules/home/img/big/Startup-Garage.jpg',
 			'modules/home/img/big/big-1.jpg',
@@ -1206,7 +1308,7 @@ angular.module('app.home').controller('HomeController', ['$scope',
 			'modules/home/img/big/big-3.jpg',
 			'modules/home/img/big/big-4.jpg',
 		]
-	};
+	};*/
 	$scope.clients = [
 		'modules/home/img/clients/logo-1.png',
         'modules/home/img/clients/logo-2.png',

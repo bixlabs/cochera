@@ -2,5 +2,5 @@
     'use strict';
 
     // Use Applicaion configuration module to register a new module
-    ApplicationConfiguration.registerModule('app.home',[ ]);
+    ApplicationConfiguration.registerModule('app.home', ['rzModule']);
 })();

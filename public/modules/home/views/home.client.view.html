@@ -1,129 +1,192 @@
 <div ng-controller="HomeController">
-  <div class="top-parallax large" parallax parallax-ratio="0.2">
-    <div class="display">
-      <div class="slider-bg" backstretch backstretch-images="top.backstretch" backstretch-duration="10550" backstretch-fade="1">
-        </div>
-    </div>
-    <section class="container">
-        <div class="home">
+    <flex-slider class="home-carousel" slideshow=false flex-slide="s in slides track by $index" direction-nav=false>
+        <li>
+            <center class="carousel-wrap">
+              <img ng-src="{{s.img}}">
+              <div class="carousel-darklayer" "></div>
+              <div class="carousel-text col-md-5">
+                <h1>{{s.title}}</h1>
+                <p>{{s.text}}</p>
+                <a class="btn btn-larger green " href="{{s.btnHref}}">{{s.btnLabel}}</a>
+              </div>
+            </center>
+        </li>
+    </flex-slider>
+
+    <article id="features" class="main">
+        <section class="container">
             <div class="row">
-                <div class="intro col-sm-12">
-                    <h1>Because inspiration isn’t listed on a project plan</h1>
-                    <h2>From sign up to development in 15 minutes.  <a href="#">Learn More</a></h2>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <center>
+                  <h3>Building Software Just Got Easier</h3>
+                  <p class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">Digital Garage developers can quickly and easily develop applications using either the web console, command-line interface, or integrated development environments</p>
+                </center>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="content-panel">
+                        <!-- Content panel in every span for padding -->
+                        <div class="feature-icon">
+                          <img class="" ng-src="modules/home/img/icons/1.png" alt="" />
+                        </div>
+                          <h4 class="feature-title margin-top-0">
+                            ONE-STOP DEVELOPMENT ENVIRONMENT
+                          </h4>
+                          <p>After code commited to Github is transferred to Digital Garage, developers enjoy a selection of over 30 one-click appilcation installs to continue product build. An appropriate number of Digital Garage pods - Docker containers running on our infrastructure - are then spun up. If an application is web-based, a URL also will be genrated.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="content-panel">
+                        <!-- Content panel in every span for padding -->
+                        <div class="feature-icon">
+                          <img class="" ng-src="modules/home/img/icons/2.png" alt="" />
+                        </div>
+                          <h4 class="feature-title">
+                            OPEN-SOURCE
+                          </h4>
+                          <p>Digital Garage is buitl on Open-source technology giving software developers a range of deployment options, access to a very broad registry of publicity available development tools and frameworks, and with no restrictions on deploying their own technologies. </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="content-panel">
+                        <!-- Content panel in every span for padding -->
+                        <div class="feature-icon">
+                          <img class="" ng-src="modules/home/img/icons/3.png" alt="" />
+                        </div>
+                          <h4 class="feature-title margin-top-0">
+                            TRANSPARENCY & PORTABILITY
+                          </h4>
+                          <p>Digital Garage is delivered as an online service that offers price transparency and cost-efficiency while eliminating complications of development infrastructure. Software developers will have the ability to acquire and deploy their development environments without long approval cycles. Built around a standarized container model powered by Docker any application created on Digital Garage can easily run from anywhere that supports docker. </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="top">
-    </section>
-  </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="content-panel">
+                        <!-- Content panel in every span for padding -->
+                        <div class="feature-icon">
+                          <img class="" ng-src="modules/home/img/icons/4.png" alt="" />
+                        </div>
+                          <h4 class="feature-title">
+                            EASY TO USE
+                          </h4>
+                          <p>Regardless of your available resources, software developers can easily set-up an environment to develop, test and stage software in just a few clicks.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="content-panel">
+                        <!-- Content panel in every span for padding -->
+                        <div class="feature-icon">
+                          <img class="" ng-src="modules/home/img/icons/5.png" alt="" />
+                        </div>
+                        <h4 class="feature-title">
+                          EASY TO USE
+                        </h4>
+                        <p>Developers have the choice and the ability to run multiple languages, frameworks, and datavases on the same platform, allowing easy access to the Docker ecosystem.</p>
 
-  <article id="about" class="main">
-      <a href="#about" class="btn btn-circle top-center" scroll-to-element>
-          <i class="fa fa-angle-down animated"></i>
-      </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="content-panel">
+                        <!-- Content panel in every span for padding -->
+                        <div class="feature-icon">
+                          <img class="" ng-src="modules/home/img/icons/6.png" alt="" />
+                        </div>
+                        <h4 class="feature-title">
+                          MULTI-LANGUAGE SUPPORT
+                        </h4>
+                        <p>Digital Garage provides an immutable, container-based platform based primarly on Docker to deploy and run applications and microservices.</p>
+
+                    </div>
+                </div>
+            </div>
+            <center><a class="btn btn-larger green " href="#">Sign Up</a></center>
+        </section>
+    </article>
+
+    <article class="building">
+        <section class="container">
+            <div class="content-panel">
+              <h3 ng-bind="plan_info.name"></h3><br>
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="pricing-box">
+                      <h5>HELLO WORLD</h5>
+                      <span ng-bind="plan_info.memory"></span> Memory<br>
+                      <span ng-bind="plan_info.cpu">1 CPU/Core</span><br>
+                      <span ng-bind="plan_info.storage">10GB SSD Storage</span><br>
+                      <span ng-bind="plan_info.datatransfer">25GB Data Transfer</span><br><br>
+                      <a class="pricing-moreinfo" href="#">More info</a>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                  <div class="pricing-info">
+                    <b>Total:</b>
+                    <span ng-bind="plan_info.price"></span>$ per month
+                  </div>
+                  <rzslider
+                      rz-slider-model="slider_plan.value"
+                      rz-slider-options="slider_plan.options"></rzslider>
+
+                  <!--
+                    <rzslider
+                      rz-slider-model="slider_memory.value"
+                      rz-slider-options="slider_memory.options"></rzslider>
+                      <div class="slider-info" >
+                        <span ng-bind="slider_memory.value"></span>GB
+                        <span class="pull-right">Memory</span>
+                      </div>
+                    <rzslider
+                      rz-slider-model="slider_cpu.value"
+                      rz-slider-options="slider_cpu.options"></rzslider>
+                      <div class="slider-info" >
+                        <span ng-bind="slider_cpu.value"></span>CPU
+                        <span class="pull-right">Core</span>
+                      </div>
+                    <rzslider
+                      rz-slider-model="slider_storage.value"
+                      rz-slider-options="slider_storage.options"></rzslider>
+                      <div class="slider-info" >
+                        <span ng-bind="slider_storage.value"></span>GB
+                        <span class="pull-right">SSD Storage</span>
+                      </div>
+                    <rzslider
+                      rz-slider-model="slider_datatransfer.value"
+                      rz-slider-options="slider_datatransfer.options"></rzslider>
+                      <div class="slider-info" >
+                        <span ng-bind="slider_datatransfer.value"></span>GB
+                        <span class="pull-right">Data Transferir</span>
+                      </div>
+                    -->
+                </div>
+              </div>
+            </div>
+        </section>
+    </article>
+
+    <article id="account" class="main">
       <section class="container">
-          <div class="row">
-              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                  <div class="content-panel">
-                      <!-- Content panel in every span for padding -->
-                      <img class="circle-bordered center" ng-src="modules/home/img/icons/ic_open_75px.png" alt="" />
-                      <h3 class="text-center">Open</h3>
-                      <p>Nunc vehicula dapibus auctor ipsum. Duis venenatis risus non nunc fermentum dapibus. Morbi lorem ante, malesuada in mollis nec, auctor nec massa. Leo mauris at tortor. Nunc et tortor sit amet orci non consequat semper. Nulla non fringilla diam. <a href="#">Learn More</a></p>
-                  </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3 ">
+            <h3 class="text-center">Got 5 Minutes? Set Up Your Digital Garage Now</h3>
+            <div class="content-panel">
+              <div class="col-sm-12">
+                <input type="email" class="form-control" name="email" placeholder="Email Address"/>
               </div>
-              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                  <div class="content-panel">
-                      <!-- Content panel in every span for padding -->
-                      <img class="circle-bordered center" ng-src="modules/home/img/icons/ic_play_75px.png" alt="" />
-                      <h3 class="text-center">Simple</h3>
-                      <p>Proin ut quam eros. Donec sed lobortis diam. Ultrices. Suspendisse feugiat, ante et viverra lacinia, lectus sem lobortis dui, ultricies consectetur leo mauris at tortor. Nunc et tortor sit amet orci consequat semper. Nulla non fringilla diam. <a href="#">Learn More</a></p>
-                  </div>
+              <div class="col-sm-12">
+                <input type="password" class="form-control" name="password" placeholder="Password"/>
               </div>
-              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                  <div class="content-panel">
-                      <!-- Content panel in every span for padding -->
-                      <img class="circle-bordered center" ng-src="modules/home/img/icons/ic_code_75px.png" alt="" />
-                      <h3 class="text-center">Flexible</h3>
-                      <p>Aenean tempus dui eget felis blandit at fringilla urna ultrices. Suspendisse feugiat, ante et viverra lacinia, lectus sem lobortis dui, ultricies consectetur leo mauris at tortor. Nunc et tortor sit amet orci non consequat semper. Nulla non fringilla diam. <a href="#">Learn More</a></p>
-                  </div>
+              <div class="col-xs-12">
+                <p>By signing up, you agree to the <a class="terms" href="#">Term of Service</a></p>
               </div>
-          </div>
-      </section>
-  </article>
-
-  <article class="pricing">
-      <a href="#account" class="btn btn-circle bottom-center" scroll-to-element>
-          <i class="fa fa-angle-down animated"></i>
-      </a>
-      <section class="container">
-          <div class="row top-buffer">
-              <div class="intro col-sm-12">
-                  <h2 class="text-center">Simple Pricing</h1>
-                  <h4 class="text-center">Start with a simple $5 per month. As you grow, you pay only for the resources you use</h2>
+              <div class="col-xs-12 text-center">
+                <a href="#" class="btn btn-larger green ">GO/GODE</a>
               </div>
-          </div>
-
-          <div class="row top-buffer">
-              <div class="intro col-sm-2 fa-icon-container">
-                <i class="fa fa-fire big"></i>
-              </div>
-              <div class="intro col-sm-10">
-                  <h3>Get Started with Ignition</h3>
-                  <div class="col-sm-12">
-                      <p>To get you started, The Digital Garage has put together a base package for just $5 month.</p>
-                      <p>For $5 month, you get: 512 MB / 1 cpu, 10 GB of SSD Disk and 1TB of Transfer</p>
-                  </div>
-              </div>
-          </div>
-
-          <div class="row bottom-buffer">
-              <div class="intro col-sm-2 fa-icon-container">
-                  <i class="fa fa-cloud big"></i>
-              </div>
-              <div class="intro col-sm-10 icon-container">
-                  <h3>Simple usage-based pricing</h3>
-                  <div class="col-sm-12">
-                      <p>With The Digital Garage, you pay only for the RAM you use. At $0.03/GB-hr let the platform provide everything your app needs to run. Scale out with app instances as your business needs grow. Expand your app with popular 3rd party services in a single click.</p>
-                  </div>
-              </div>
-          </div>
-      </section>
-  </article>
-
-  <article id="account" class="main">
-    <section class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-          <div class="content-panel">
-            <h2>The Digital Garage</h2>
-            <h3>Simple DevOps, Built for Developers</h3>
-            <div class="col-sm-12 col-md-12 col-lg-12">
-              <hr class="col-sm-6 col-md-6 col-lg-6 col-sm-offset-1 vertical-separator">
-            </div>
-            <h4>Get your Dev on in under 5 minutes.</h4>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-          <div class="row"></div>
-          <div class="content-panel">
-            <div class="col-sm-12"></div>
-            <div class="col-sm-12">
-              <input type="email" class="form-control" name="email" placeholder="Email Address"/>
-            </div>
-            <div class="col-sm-12">
-              <input type="password" class="form-control" name="password" placeholder="Password"/>
-            </div>
-            <div class="social col-xs-12">
-              <a href="#" class="btn green col-xs-12">CREATE ACCOUNT</a>
-            </div>
-            <div class="social col-xs-12">
-              <p>By signing up, you agree to the <a href="#">Term of Service</a></p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </article>
+      </section>
+    </article>
 
 </div>
