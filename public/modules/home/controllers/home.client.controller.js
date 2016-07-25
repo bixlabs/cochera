@@ -5,32 +5,32 @@ angular.module('app.home').controller('HomeController', ['$scope',
 
     var pricing_plans = [
         {
-            name: "Simple Pricing Plan",
-            memory: "512MB",
+            name: "4GB RAM Plan",
+            memory: "4GB",
             cpu: "1 CPU/Core",
             storage: "10GB SSD Storage",
             datatransfer: "25GB Data Transfer",
             price: '5'
         },
         {
-            name: "Standard Pricing Plan",
-            memory: "1GB",
+            name: "8GB RAM Plan",
+            memory: "8GB",
             cpu: "2 CPU/Core",
             storage: "25GB SSD Storage",
             datatransfer: "30GB Data Transfer",
             price: '15'
         },
         {
-            name: "Plus Pricing Plan",
-            memory: "4GB",
+            name: "12GB RAM Plan ",
+            memory: "12GB",
             cpu: "4 CPU/Core",
             storage: "48GB SSD Storage",
             datatransfer: "70GB Data Transfer",
             price: '25'
         },
         {
-            name: "Pro Pricing Plan",
-            memory: "8GB",
+            name: "16GB RAM Plan",
+            memory: "16GB",
             cpu: "6 CPU/Core",
             storage: "192GB SSD Storage",
             datatransfer: "100GB Data Transfer",
@@ -68,10 +68,10 @@ angular.module('app.home').controller('HomeController', ['$scope',
                 hideLimitLabels: true,
                 showTicksValues: true,
                 stepsArray: [
-                  {value: 0, legend: 'Simple'},
-                  {value: 1, legend: 'Standard'},
-                  {value: 2, legend: 'Plus'},
-                  {value: 3, legend: 'Pro'}
+                  {value: 0, legend: '4GB'},
+                  {value: 1, legend: '8GB'},
+                  {value: 2, legend: '12GB'},
+                  {value: 3, legend: '16GB'}
                 ],
                 translate: function(value) {
                   return '';
