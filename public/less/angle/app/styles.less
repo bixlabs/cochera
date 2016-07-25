@@ -2,9 +2,10 @@ body {
   font-weight: 300;
   font-family: 'Arial', sans-serif;
 
-   @media @mobile-s {
-      margin-top: 68px;
-    }
+  @media @upto-tablet{
+    margin-top: 68px;
+  }
+
 }
 p {
   font-size: 14px;
@@ -90,6 +91,9 @@ strong {
     @media @mobile-s {
       width: 175px;
     }
+    @media @upto-tablet {
+      width: 175px;
+    }
   }
 }
 .navbar .navbar-brand:hover{
@@ -110,11 +114,21 @@ strong {
     padding: 0px;
     background-color: rgba(100, 100, 100, 0.5);
   }
+  @media @upto-tablet {
+    margin-top: 9px;
+    padding: 0px;
+    background-color: rgba(100, 100, 100, 0.5);
+  }
 }
 
 .navbar-search-input .input-group{
   border: 1px solid #c3df7b;
   @media @mobile-s {
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+  }
+  @media @upto-tablet {
     border-left: 0px;
     border-top: 0px;
     border-right: 0px;
@@ -128,12 +142,19 @@ strong {
     background-color: transparent;
     color: white;
   }
+  @media @upto-tablet {
+    background-color: transparent;
+    color: white;
+  }
 }
 
 .navbar-search-input  button {
   border: 0;
   background: none;
   @media @mobile-s {
+    color: @green-main;
+  }
+  @media @upto-tablet {
     color: @green-main;
   }
 }
@@ -145,6 +166,9 @@ strong {
   @media @mobile-s {
     margin-top: 0px;
   }
+  @media @upto-tablet {
+    margin-top: 0px;
+  }
 }
 
 .navbar  {
@@ -153,6 +177,9 @@ strong {
   margin-bottom: 0px;
   padding-bottom: 0px;
   @media @mobile-s {
+    height: 70px;
+  }
+  @media @upto-tablet {
     height: 70px;
   }
 }
@@ -425,6 +452,12 @@ strong {
 }
 
 /* ------- Home Carousel ------------ */
+.home-carousel {
+  @media only screen and (min-width:767px) and (max-width: 992px){
+    margin-top: 84px;
+  }
+}
+
 .home-carousel .carousel-wrap {
   position:relative;
 }
@@ -432,7 +465,6 @@ strong {
 
    @media @mobile-s {
       min-width: 1000px;
-
     }
 
 }
@@ -458,16 +490,27 @@ strong {
     font-weight:bold;
     margin-bottom:10px;
 
-    @media @mobile-s {
+    @media @desktop {
+      font-size: 56px;
+    }
+    @media @upto-tablet {
+      font-size: 52px;
+    }
+    @media @upto-tablet {
       font-size: 42px;
     }
   }
 
   p{
-    font-size:22px;
     margin-bottom:28px;
 
-     @media @mobile-s {
+    @media @desktop {
+      font-size: 22px;
+    }
+    @media @upto-desktop {
+      font-size: 16px;
+    }
+    @media @upto-tablet {
       font-size: 14px;
     }
 
@@ -477,15 +520,12 @@ strong {
 /* -------- FlexSlider Styles --------- */
 
 .flex-control-nav {
-  top: 535px;
+  bottom: 0px;
+  margin-bottom: 5%;
   z-index: 1000;
-
-  @media @mobile-s {
-    top: 355px;
-  }
 }
 .flex-control-paging li {
-  @media @mobile-s {
+  @media @upto-tablet {
     margin-left: 3px;
     margin-right: 3px;
   }
@@ -503,7 +543,7 @@ strong {
     -o-border-radius: 20px;
     border-radius: 20px;
     box-shadow: none;
-    @media @mobile-s {
+    @media @upto-tablet {
       width: 12px;
       height: 12px;
     }
@@ -519,10 +559,8 @@ strong {
   cursor: default;
  }
  .flexslider {
-   @media @mobile-s {
       border-left: 0px;
       border-right: 0px;
-    }
  }
 
 
@@ -872,11 +910,17 @@ strong {
   padding: 8px 16px;
 }
 .btn.btn-larger {
-  padding: 11px 50px;
-  font-size: 17.5px;
   margin-bottom: 10px;
 
-  @media @mobile-s {
+  @media @desktop {
+   padding: 11px 50px;
+   font-size: 17.5px;
+  }
+  @media @upto-desktop{
+    font-size: 14px;
+    padding: 8px 40px;
+  }
+  @media @upto-tablet {
     font-size: 14px;
     padding: 6px 30px;
   }
