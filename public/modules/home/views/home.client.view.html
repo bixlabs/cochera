@@ -80,8 +80,8 @@
                         <div class="feature-icon">
                           <img class="" ng-src="modules/home/img/icons/5.png" alt="" />
                         </div>
-                        <h4 class="feature-title">
-                          EASY TO USE
+                        <h4 class="feature-title margin-top-0">
+                          MULTI-LANGUAGE SUPPORT
                         </h4>
                         <p>Developers have the choice and the ability to run multiple languages, frameworks, and datavases on the same platform, allowing easy access to the Docker ecosystem.</p>
 
@@ -94,7 +94,7 @@
                           <img class="" ng-src="modules/home/img/icons/6.png" alt="" />
                         </div>
                         <h4 class="feature-title">
-                          MULTI-LANGUAGE SUPPORT
+                          CONTAINER-BASED
                         </h4>
                         <p>Digital Garage provides an immutable, container-based platform based primarly on Docker to deploy and run applications and microservices.</p>
 
@@ -108,57 +108,50 @@
     <article class="building">
         <section class="container">
             <div class="content-panel">
-              <h3 ng-bind="plan_info.name"></h3><br>
+              <h3 class="pricing-title">Simple Pricing Plan</h3><br>
               <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="pricing-box-info">
+                      <p>Digital Garage offers an introductory <b>HELLO WORLD</b> package to get your development
+environment started. As your development needs grow, you can adjust your resources at any
+point in time - no need to wait. No surprises and no long-term commitments.</p>
+                    </div>
                     <div class="pricing-box">
-                      <h5>HELLO WORLD</h5>
-                      <span ng-bind="plan_info.memory"></span> Memory<br>
-                      <span ng-bind="plan_info.cpu">1 CPU/Core</span><br>
-                      <span ng-bind="plan_info.storage">10GB SSD Storage</span><br>
-                      <span ng-bind="plan_info.datatransfer">25GB Data Transfer</span><br><br>
-                      <a class="pricing-moreinfo" href="#">More info</a>
-                  </div>
+                      <h4>HELLO WORLD</h4>
+                      <span></span>512MB Memory<br>
+                      <span>1 CPU/Core</span><br>
+                      <span>10GB SSD Storage</span><br>
+                      <span >25GB Data Transfer</span><br><br>
+                      <span class="price-permonth">5$ per month</span>
+                    </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                  <div class="pricing-info">
-                    <b>Total:</b>
-                    <span ng-bind="plan_info.price"></span>$ per month
+                <div class="col-xs-12 col-sm-12 col-md-offset-2 col-lg-offset-2 col-md-7 col-lg-7">
+                  <div class="pricing-calculator">
+                      <h4>What you pay</h4>
+                      <span ng-bind="plan_info.memory"></span> Memory<br>
+                      <hr>
+                      <span ng-bind="plan_info.cpu">1 CPU/Core</span><br>
+                      <hr>
+                      <span ng-bind="plan_info.storage">10GB SSD Storage</span><br>
+                      <hr>
+                      <span ng-bind="plan_info.datatransfer">25GB Data Transfer</span><br>
+                      <hr>
+                      <div class="price">
+                        <span ng-bind="plan_info.price"></span>$ per month
+                      </div>
                   </div>
                   <rzslider
                       rz-slider-model="slider_plan.value"
                       rz-slider-options="slider_plan.options"></rzslider>
 
-                  <!--
-                    <rzslider
-                      rz-slider-model="slider_memory.value"
-                      rz-slider-options="slider_memory.options"></rzslider>
-                      <div class="slider-info" >
-                        <span ng-bind="slider_memory.value"></span>GB
-                        <span class="pull-right">Memory</span>
-                      </div>
-                    <rzslider
-                      rz-slider-model="slider_cpu.value"
-                      rz-slider-options="slider_cpu.options"></rzslider>
-                      <div class="slider-info" >
-                        <span ng-bind="slider_cpu.value"></span>CPU
-                        <span class="pull-right">Core</span>
-                      </div>
-                    <rzslider
-                      rz-slider-model="slider_storage.value"
-                      rz-slider-options="slider_storage.options"></rzslider>
-                      <div class="slider-info" >
-                        <span ng-bind="slider_storage.value"></span>GB
-                        <span class="pull-right">SSD Storage</span>
-                      </div>
-                    <rzslider
-                      rz-slider-model="slider_datatransfer.value"
-                      rz-slider-options="slider_datatransfer.options"></rzslider>
-                      <div class="slider-info" >
-                        <span ng-bind="slider_datatransfer.value"></span>GB
-                        <span class="pull-right">Data Transferir</span>
-                      </div>
-                    -->
+                  <div class="pricing-gocode">
+                    <a href="#" class="btn btn-larger green ">GO/GODE</a>
+                  </div>
+                  <div class="col-xs-12 text-center">
+                    <a href="#" class="pricing-moreinfo">More info</a><br>
+                    Contact us for pricing beyond 20GB of memory.
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -178,7 +171,7 @@
                 <input type="password" class="form-control" name="password" placeholder="Password"/>
               </div>
               <div class="col-xs-12">
-                <p>By signing up, you agree to the <a class="terms" href="#">Term of Service</a></p>
+                <p class="term-of-service">By signing up, you agree to the <a href="#">Term of Service</a></p>
               </div>
               <div class="col-xs-12 text-center">
                 <a href="#" class="btn btn-larger green ">GO/GODE</a>

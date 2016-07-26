@@ -1198,6 +1198,156 @@ angular
 angular.module('app.home').controller('HomeController', ['$scope',
   function ($scope) {
 
+    var pricing_plans = [
+        {
+            memory:"512MB",
+            cpu:"1 CPU/Core",
+            storage:"10GB SSD Storage",
+            datatransfer:"25GB Data Transfer",
+            price:"5"
+        },
+        {
+            memory:"1GB",
+            cpu:"1 CPU/Core",
+            storage:"5GB SSD Storage",
+            datatransfer:"150GB Data Transfer",
+            price:"25"
+        },
+        {
+            memory:"2GB",
+            cpu:"1 CPU/Core",
+            storage:"10GB SSD Storage",
+            datatransfer:"300GB Data Transfer",
+            price:"50"
+        },
+        {
+            memory:"3GB",
+            cpu:"1 CPU/Core",
+            storage:"15GB SSD Storage",
+            datatransfer:"450GB Data Transfer",
+            price:"75"
+        },
+        {
+            memory:"4GB",
+            cpu:"1 CPU/Core",
+            storage:"20GB SSD Storage",
+            datatransfer:"600 GB Data Transfer",
+            price:"100"
+        },
+        {
+            memory:"5GB",
+            cpu:"2 CPU/Core",
+            storage:"25GB SSD Storage",
+            datatransfer:"750GB Data Transfer",
+            price:"125"
+        },
+        {
+            memory:"6GB",
+            cpu:"2 CPU/Core",
+            storage:"30GB SSD Storage",
+            datatransfer:"900GB Data Transfer",
+            price:"150"
+        },
+        {
+            memory:"7GB",
+            cpu:"2 CPU/Core",
+            storage:"35GB SSD Storage",
+            datatransfer:"1,050GB Data Transfer",
+            price:"175"
+        },
+        {
+            memory:"8GB",
+            cpu:"2 CPU/Core",
+            storage:"40GB SSD Storage",
+            datatransfer:"1,200GB Data Transfer",
+            price:"200"
+        },
+        {
+            memory:"9GB",
+            cpu:"3 CPU/Core",
+            storage:"45GB SSD Storage",
+            datatransfer:"1,350GB Data Transfer",
+            price:"225"
+        },
+        {
+            memory:"10GB",
+            cpu:"3 CPU/Core",
+            storage:"50GB SSD Storage",
+            datatransfer:"1,500GB Data Transfer",
+            price:"250"
+        },
+        {
+            memory:"11GB",
+            cpu:"3 CPU/Core",
+            storage:"55GB SSD Storage",
+            datatransfer:"1,650GB Data Transfer",
+            price:"275"
+        },
+        {
+            memory:"12GB",
+            cpu:"3 CPU/Core",
+            storage:"60GB SSD Storage",
+            datatransfer:"1,800GB Data Transfer",
+            price:"300"
+        },
+        {
+            memory:"13GB",
+            cpu:"4 CPU/Core",
+            storage:"65GB SSD Storage",
+            datatransfer:"1,950GB Data Transfer",
+            price:"325"
+        },
+        {
+            memory:"14GB",
+            cpu:"4 CPU/Core",
+            storage:"70GB SSD Storage",
+            datatransfer:"2,100GB Data Transfer",
+            price:"350"
+        },
+        {
+            memory:"15GB",
+            cpu:"4 CPU/Core",
+            storage:"75GB SSD Storage",
+            datatransfer:"2,250GB Data Transfer",
+            price:"375"
+        },
+        {
+            memory:"16GB",
+            cpu:"4 CPU/Core",
+            storage:"80GB SSD Storage",
+            datatransfer:"2,400GB Data Transfer",
+            price:"400"
+        },
+        {
+            memory:"17GB",
+            cpu:"5 CPU/Core",
+            storage:"85GB SSD Storage",
+            datatransfer:"2,550GB Data Transfer",
+            price:"425"
+        },
+        {
+            memory:"18GB",
+            cpu:"5 CPU/Core",
+            storage:"90GB SSD Storage",
+            datatransfer:"2,700GB Data Transfer",
+            price:"450"
+        },
+        {
+            memory:"19GB",
+            cpu:"5 CPU/Core",
+            storage:"95GB SSD Storage",
+            datatransfer:"2,850GB Data Transfer",
+            price:"475"
+        },
+        {
+            memory:"20GB",
+            cpu:"5 CPU/Core",
+            storage:"100GB SSD Storage",
+            datatransfer:"3,000GB Data Transfer",
+            price:"500"
+        }
+    ];
+
     $scope.slides = [
                 {
                     img : 'modules/home/img/big/big1.jpg',
@@ -1220,95 +1370,47 @@ angular.module('app.home').controller('HomeController', ['$scope',
                     btnLabel : 'Sign Up',
                     btnHref : '#'
                 },
-
             ];
 
     $scope.slider_plan = {
-            value: 1,
+            value: 0,
             options: {
                 hideLimitLabels: true,
                 showTicksValues: true,
                 stepsArray: [
-                  {value: 1, legend: 'Simple'},
-                  {value: 2, legend: 'Standard'},
-                  {value: 3, legend: 'Plus'},
-                  {value: 4, legend: 'Pro'}
+                  {value: 0, legend: '512MB'},
+                  {value: 1},
+                  {value: 2},
+                  {value: 3},
+                  {value: 4, legend: '4GB'},
+                  {value: 5},
+                  {value: 6},
+                  {value: 7},
+                  {value: 8, legend: '8GB'},
+                  {value: 9},
+                  {value: 10},
+                  {value: 11},
+                  {value: 12, legend: '12GB'},
+                  {value: 13},
+                  {value: 14},
+                  {value: 15},
+                  {value: 16, legend: '16GB'},
+                  {value: 17},
+                  {value: 18},
+                  {value: 19},
+                  {value: 20, legend: '20GB'}
                 ],
                 translate: function(value) {
                   return '';
                 },
                 onChange: function () {
-                    $scope.plan_info.total = $scope.slider_callbacks.value * 2;
+                    $scope.plan_info = pricing_plans[$scope.slider_plan.value];
                 }
             }
         };
 
-    $scope.plan_info = {
-        total: 5
-    }
+    $scope.plan_info = pricing_plans[0];
 
-/*
-    $scope.slider_memory = {
-        value: 3,
-        options: {
-            ceil: 10,
-            floor: 0,
-            showTicks: true,
-            hideLimitLabels: true,
-            translate: function(value) {
-              return '';
-            }
-        }
-    };
-
-    $scope.slider_cpu = {
-        value: 3,
-        options: {
-            ceil: 10,
-            floor: 0,
-            showTicks: true,
-            hideLimitLabels: true,
-            translate: function(value) {
-              return '';
-            }
-        }
-    };
-
-    $scope.slider_storage = {
-        value: 3,
-        options: {
-            ceil: 10,
-            floor: 0,
-            showTicks: true,
-            hideLimitLabels: true,
-            translate: function(value) {
-              return '';
-            }
-        }
-    };
-
-    $scope.slider_datatransfer = {
-        value: 3,
-        options: {
-            ceil: 10,
-            floor: 0,
-            showTicks: true,
-            hideLimitLabels: true,
-            translate: function(value) {
-              return '';
-            }
-        }
-    };
-*/
-	/*$scope.top = {
-		backstretch: [
-			'modules/home/img/big/Startup-Garage.jpg',
-			'modules/home/img/big/big-1.jpg',
-			'modules/home/img/big/big-2.jpg',
-			'modules/home/img/big/big-3.jpg',
-			'modules/home/img/big/big-4.jpg',
-		]
-	};*/
 	$scope.clients = [
 		'modules/home/img/clients/logo-1.png',
         'modules/home/img/clients/logo-2.png',

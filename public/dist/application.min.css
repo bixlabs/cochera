@@ -13979,6 +13979,10 @@ ul.pagination > li > span:hover {
     margin-bottom: 40px;
   }
 }
+.pricing-title {
+  margin-top: 10px;
+  text-align: center;
+}
 .pricing-box {
   background-color: #9BCA22;
   text-align: center;
@@ -13989,11 +13993,27 @@ ul.pagination > li > span:hover {
   -moz-box-shadow: 2px 2px 6px -2px #a1a1a1;
   box-shadow: 2px 2px 6px -2px #a1a1a1;
 }
-.pricing-box h5 {
+.pricing-box h4 {
   font-weight: bold;
+  background: white;
+  border-left-width: 0;
+  color: #9BCA22;
+  margin-left: -25px;
+  margin-right: -25px;
+  margin-top: -25px;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
-.pricing-box .pricing-moreinfo {
+.pricing-box-info {
+  margin-bottom: 20px;
+}
+.pricing-box-info p {
+  font-style: italic;
+}
+.pricing-box .price-permonth {
   margin-top: 15px;
+  font-size: 18px;
   color: white;
   font-weight: bold;
 }
@@ -14002,6 +14022,49 @@ ul.pagination > li > span:hover {
   color: black;
   font-size: 22px;
   margin-top: 45px;
+}
+.pricing-gocode {
+  width: 100%;
+  text-align: center;
+  margin-top: 55px;
+}
+.pricing-moreinfo {
+  color: #9BCA22;
+  font-weight: bold;
+  margin-top: 25px;
+  font-size: 16px;
+}
+.pricing-moreinfo:hover {
+  color: #9BCA22;
+}
+.pricing-calculator {
+  background-color: #fff;
+  color: #9BCA22;
+  text-align: center;
+  margin-top: 30px;
+  -webkit-box-shadow: 2px 2px 6px -2px #a1a1a1;
+  -moz-box-shadow: 2px 2px 6px -2px #a1a1a1;
+  box-shadow: 2px 2px 6px -2px #a1a1a1;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+.pricing-calculator h4 {
+  font-weight: bold;
+  background: #9BCA22;
+  border-left-width: 0;
+  color: white;
+  margin-top: -25px;
+  margin-bottom: 6px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.pricing-calculator hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.pricing-calculator .price {
+  font-weight: bold;
+  font-size: 18px;
 }
 .slider-info {
   width: 100%;
@@ -14050,6 +14113,9 @@ ul.pagination > li > span:hover {
 }
 .rzslider .rz-ticks {
   top: 20px;
+}
+.rzslider .rz-ticks .rz-tick .rz-tick-legend {
+  top: 10px;
 }
 /* ---------- Pricing Styles ----------- */
 /* Featured Tag */
@@ -14680,7 +14746,10 @@ img.center {
 #account h2 {
   color: #43A047;
 }
-#account a.terms {
+#account .term-of-service {
+  text-align: center;
+}
+#account .term-of-service a {
   color: #656565;
   text-decoration: underline;
 }
