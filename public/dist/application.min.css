@@ -13035,6 +13035,26 @@ strong {
     color: #9BCA22;
   }
 }
+.navbar-buttoms {
+  margin-top: 26px;
+  text-align: right;
+}
+.navbar-buttoms a {
+  color: #7c7c7c;
+  font-size: 16px;
+}
+@media only screen and (max-width: 767px) {
+  .navbar-buttoms a {
+    color: #898989;
+  }
+}
+.navbar-buttoms .login-btn {
+  border-right: 1px solid #7c7c7c;
+  padding: 2px 9px 2px 5px;
+}
+.navbar-buttoms .logout-btn {
+  padding: 8px 5px;
+}
 .navbar .navbar-collapse {
   background: rgba(100, 100, 100, 0.5);
   margin-top: 20px;

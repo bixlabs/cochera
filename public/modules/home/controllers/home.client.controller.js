@@ -157,22 +157,26 @@ angular.module('app.home').controller('HomeController', ['$scope',
                 {
                     img : 'modules/home/img/big/big1.jpg',
                     title : 'OPEN',
-                    text: 'Open source technolsogy provides a range of deployment options with no restrictions.',
-                    btnLabel : 'Sign Up',
+                    text: 'No lock in. No lock out. Open source technology provides \
+                           a range of deployment options with no restrictions.',
+                    btnLabel : 'GO/CODE',
                     btnHref : '#'
                 },
                 {
                     img : 'modules/home/img/big/big2.jpg',
                     title: 'ACCESIBLE',
-                    text : 'Cloud-based platform for easy management of your developments projects with transparent pricing and usage without long approval cycles.',
-                    btnLabel : 'Sign Up',
+                    text : 'Cloud-based platform with transparent pricing and \
+                            usage allows for easy management of projects without \
+                            long approval cycles.',
+                    btnLabel : 'GO/CODE',
                     btnHref : '#'
                 },
                 {
                     img : 'modules/home/img/big/big3.jpg',
                     title: 'SIMPLE',
-                    text : 'Anyone can create a DevOps enviroment with aesy one-clicks installs.',
-                    btnLabel : 'Sign Up',
+                    text : 'Anyone can create a DevOps environment with easy \
+                            one-clicks installs.',
+                    btnLabel : 'GO/CODE',
                     btnHref : '#'
                 },
             ];
