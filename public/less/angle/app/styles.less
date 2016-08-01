@@ -109,13 +109,8 @@ strong {
 
 .navbar .navbar-search-input{
   margin-top: 20px;
-  @media @mobile-s {
-    margin-top: 9px;
-    padding: 0px;
-    background-color: rgba(100, 100, 100, 0.5);
-  }
   @media @upto-tablet {
-    margin-top: 9px;
+    margin-top: 25px;
     padding: 0px;
     background-color: rgba(100, 100, 100, 0.5);
   }
@@ -162,6 +157,18 @@ strong {
 .navbar-buttoms {
   margin-top: 26px;
   text-align: right;
+  @media @upto-tablet {
+    background: white none repeat scroll 0 0;
+    margin-bottom: 33px;
+    margin-right: 0;
+    margin-top: -64px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    a{
+      font-size: 14px !important;
+    }
+  }
   a{
     color: #7c7c7c;
     font-size: 16px;
@@ -481,11 +488,7 @@ strong {
   position:relative;
 }
 .carousel-wrap img {
-
-   @media @mobile-s {
-      min-width: 1000px;
-    }
-
+  min-width: 1000px;
 }
 .home-carousel .carousel-darklayer{
   position:absolute;
@@ -497,17 +500,23 @@ strong {
 }
 .home-carousel .carousel-text{
   position:absolute;
+  padding-top: 14%;
   margin:auto;
-  top:130px;
+  top:0px;
   bottom:0;
   left:0;
   right:0;
-  height:300px;
+  height:100%;
   color:white;
+
+  @media @upto-tablet {
+      padding-top: 25%;
+  }
 
   h1{
     font-weight:bold;
     margin-bottom:10px;
+
 
     @media @desktop {
       font-size: 56px;
@@ -522,18 +531,34 @@ strong {
 
   p{
     margin-bottom:28px;
-
-    @media @desktop {
-      font-size: 22px;
-    }
+    font-size: 22px;
     @media @upto-desktop {
-      font-size: 16px;
+      font-size: 20px;
     }
     @media @upto-tablet {
-      font-size: 14px;
+      font-size: 16px;
     }
 
+
   }
+}
+
+.btn-slideshow {
+  position: absolute;
+  bottom: 20%;
+  margin-bottom: 130px;
+  margin: auto;
+  left: 0px;
+  right: 0px;
+  width: 189px;
+
+  @media @tablet {
+      bottom: 23%;
+  }
+  @media @desktop {
+      bottom: 25%;
+  }
+
 }
 
 /* -------- FlexSlider Styles --------- */
@@ -542,6 +567,9 @@ strong {
   bottom: 0px;
   margin-bottom: 5%;
   z-index: 1000;
+  @media @upto-tablet {
+    margin-bottom: 12%;
+  }
 }
 .flex-control-paging li {
   @media @upto-tablet {
@@ -584,6 +612,17 @@ strong {
 
 
 /* ---------- Home Features Styles ----------*/
+.features-head p {
+  font-size: 16px;
+}
+
+.features-row{
+   margin-bottom: 15px;
+    margin-top: 30px;
+    p {
+      font-size: 12px;
+    }
+}
 
 .feature-icon {
   float: left;
@@ -593,10 +632,12 @@ strong {
 
 .feature-title {
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .margin-top-0 {
   margin-top: 0px;
+  margin-bottom: 12px;
 }
 
 
@@ -930,10 +971,11 @@ strong {
 }
 .btn.btn-larger {
   margin-bottom: 10px;
+  padding: 11px 50px;
+  font-size: 17.5px;
 
+  /*
   @media @desktop {
-   padding: 11px 50px;
-   font-size: 17.5px;
   }
   @media @upto-desktop{
     font-size: 14px;
@@ -943,6 +985,7 @@ strong {
     font-size: 14px;
     padding: 6px 30px;
   }
+  */
 }
 .btn.btn-large {
   padding: 11px 19px;
@@ -1784,10 +1827,11 @@ footer .footer-content {
   min-height: 80px;
 }
 footer .footer-title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  text-align: left;
-  padding-bottom: 5px;
+  font-family: "Arial",sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    text-align: left;
 }
 footer .footer-input {
   border-radius: 0 !important;

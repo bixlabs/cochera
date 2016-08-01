@@ -12974,16 +12974,9 @@ strong {
 .navbar .navbar-search-input {
   margin-top: 20px;
 }
-@media only screen and (max-width: 480px) {
-  .navbar .navbar-search-input {
-    margin-top: 9px;
-    padding: 0px;
-    background-color: rgba(100, 100, 100, 0.5);
-  }
-}
 @media only screen and (max-width: 767px) {
   .navbar .navbar-search-input {
-    margin-top: 9px;
+    margin-top: 25px;
     padding: 0px;
     background-color: rgba(100, 100, 100, 0.5);
   }
@@ -13038,6 +13031,20 @@ strong {
 .navbar-buttoms {
   margin-top: 26px;
   text-align: right;
+}
+@media only screen and (max-width: 767px) {
+  .navbar-buttoms {
+    background: white none repeat scroll 0 0;
+    margin-bottom: 33px;
+    margin-right: 0;
+    margin-top: -64px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+  }
+  .navbar-buttoms a {
+    font-size: 14px !important;
+  }
 }
 .navbar-buttoms a {
   color: #7c7c7c;
@@ -13359,10 +13366,8 @@ strong {
 .home-carousel .carousel-wrap {
   position: relative;
 }
-@media only screen and (max-width: 480px) {
-  .carousel-wrap img {
-    min-width: 1000px;
-  }
+.carousel-wrap img {
+  min-width: 1000px;
 }
 .home-carousel .carousel-darklayer {
   position: absolute;
@@ -13374,13 +13379,19 @@ strong {
 }
 .home-carousel .carousel-text {
   position: absolute;
+  padding-top: 14%;
   margin: auto;
-  top: 130px;
+  top: 0px;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 300px;
+  height: 100%;
   color: white;
+}
+@media only screen and (max-width: 767px) {
+  .home-carousel .carousel-text {
+    padding-top: 25%;
+  }
 }
 .home-carousel .carousel-text h1 {
   font-weight: bold;
@@ -13403,20 +13414,35 @@ strong {
 }
 .home-carousel .carousel-text p {
   margin-bottom: 28px;
-}
-@media only screen and (min-width: 992px) {
-  .home-carousel .carousel-text p {
-    font-size: 22px;
-  }
+  font-size: 22px;
 }
 @media only screen and (max-width: 991px) {
   .home-carousel .carousel-text p {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 @media only screen and (max-width: 767px) {
   .home-carousel .carousel-text p {
-    font-size: 14px;
+    font-size: 16px;
+  }
+}
+.btn-slideshow {
+  position: absolute;
+  bottom: 20%;
+  margin-bottom: 130px;
+  margin: auto;
+  left: 0px;
+  right: 0px;
+  width: 189px;
+}
+@media only screen and (min-width: 768px) {
+  .btn-slideshow {
+    bottom: 23%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .btn-slideshow {
+    bottom: 25%;
   }
 }
 /* -------- FlexSlider Styles --------- */
@@ -13424,6 +13450,11 @@ strong {
   bottom: 0px;
   margin-bottom: 5%;
   z-index: 1000;
+}
+@media only screen and (max-width: 767px) {
+  .flex-control-nav {
+    margin-bottom: 12%;
+  }
 }
 @media only screen and (max-width: 767px) {
   .flex-control-paging li {
@@ -13465,15 +13496,27 @@ strong {
   border-right: 0px;
 }
 /* ---------- Home Features Styles ----------*/
+.features-head p {
+  font-size: 16px;
+}
+.features-row {
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+.features-row p {
+  font-size: 12px;
+}
 .feature-icon {
   float: left;
   margin-right: 5px;
 }
 .feature-title {
   margin-bottom: 20px;
+  font-weight: bold;
 }
 .margin-top-0 {
   margin-top: 0px;
+  margin-bottom: 12px;
 }
 /* ---------- SignIn Styles ----------- */
 /* Login Styles */
@@ -13805,24 +13848,20 @@ strong {
 }
 .btn.btn-larger {
   margin-bottom: 10px;
-}
-@media only screen and (min-width: 992px) {
-  .btn.btn-larger {
-    padding: 11px 50px;
-    font-size: 17.5px;
+  padding: 11px 50px;
+  font-size: 17.5px;
+  /*
+  @media @desktop {
   }
-}
-@media only screen and (max-width: 991px) {
-  .btn.btn-larger {
+  @media @upto-desktop{
     font-size: 14px;
     padding: 8px 40px;
   }
-}
-@media only screen and (max-width: 767px) {
-  .btn.btn-larger {
+  @media @upto-tablet {
     font-size: 14px;
     padding: 6px 30px;
   }
+  */
 }
 .btn.btn-large {
   padding: 11px 19px;
@@ -14650,10 +14689,11 @@ footer .footer-content {
   min-height: 80px;
 }
 footer .footer-title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  text-align: left;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
   padding-bottom: 5px;
+  text-align: left;
 }
 footer .footer-input {
   border-radius: 0 !important;
