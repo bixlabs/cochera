@@ -10,11 +10,23 @@
 
         var directive = {
             restrict: 'EAC',
-            template: 
+            template:
+            '<link rel="stylesheet" type="text/css" href="modules/preloader/css/garage.css">'+
+            '<div class="uil-garage-css" style="transform:scale(1);">'+
+              '<div class="before-outer"></div>'+
+              '<div class="after-outer"></div>'+
+              '<div class="outer"></div>'+
+              '<div class="inner"></div>'+
+              '<div class="inner"></div>'+
+              '<div class="inner"></div>'+
+              '<div class="inner"></div>'+
+              '<div class="inner"></div>'+
+            '</div>',
+            /*
               '<div class="preloader-progress">' +
                   '<div class="preloader-progress-bar" ' +
                        'ng-style="{width: loadCounter + \'%\'}"></div>' +
-              '</div>',
+              '</div>',*/
             link: link
         };
         return directive;
@@ -60,7 +72,8 @@
               $animate.addClass(el, 'preloader-hidden');
               // retore scrollbar
               angular.element('body').css('overflow', '');
-            }, 300);
+            }, 400);
+
           }
 
           function appReady() {
@@ -70,7 +83,7 @@
             // a custom event must be used instead
             var off = scope.$on('$viewContentLoaded', function () {
               viewsLoaded ++;
-              // we know there are at least two views to be loaded 
+              // we know there are at least two views to be loaded
               // before the app is ready (1-index.html 2-app*.html)
               if ( viewsLoaded === 2) {
                 // with resolve this fires only once

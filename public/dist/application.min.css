@@ -8302,17 +8302,12 @@ _:-ms-lang(x),
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #388E3C;
-  background-image: -webkit-linear-gradient(90deg, #388E3C 10%, #317c34 90%);
-  /* Chrome 10+, Saf5.1+ */
-  background-image: -moz-linear-gradient(90deg, #388E3C 10%, #317c34 90%);
-  /* FF3.6+ */
-  background-image: -ms-linear-gradient(90deg, #388E3C 10%, #317c34 90%);
-  /* IE10 */
-  background-image: -o-linear-gradient(90deg, #388E3C 10%, #317c34 90%);
-  /* Opera 11.10+ */
-  background-image: linear-gradient(90deg, #388E3C 10%, #317c34 90%);
-  /* W3C */
+  background-color: #fff;
+  /*background-image: -webkit-linear-gradient(90deg, @preloader-bg 10%, darken(@preloader-bg, 5%) 90%); /* Chrome 10+, Saf5.1+ */
+  /*background-image:    -moz-linear-gradient(90deg, @preloader-bg 10%, darken(@preloader-bg, 5%) 90%); /* FF3.6+ */
+  /*background-image:     -ms-linear-gradient(90deg, @preloader-bg 10%, darken(@preloader-bg, 5%) 90%); /* IE10 */
+  /*background-image:      -o-linear-gradient(90deg, @preloader-bg 10%, darken(@preloader-bg, 5%) 90%); /* Opera 11.10+ */
+  /*background-image:         linear-gradient(90deg, @preloader-bg 10%, darken(@preloader-bg, 5%) 90%); /* W3C */
   z-index: 9999;
   -webkit-transition: opacity 0.65s;
   -o-transition: opacity 0.65s;

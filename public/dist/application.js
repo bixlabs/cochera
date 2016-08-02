@@ -133,7 +133,7 @@ angular.element(document).ready(function () {
           'app.routes',
           'app.sidebar',
           'app.navsearch',
-         // 'app.preloader',
+          'app.preloader',
           'app.loadingbar',
           'app.translate',
           'app.settings',
@@ -1352,25 +1352,21 @@ angular.module('app.home').controller('HomeController', ['$scope',
                 {
                     img : 'modules/home/img/big/big1.jpg',
                     title : 'OPEN',
-                    text: 'No lock in. No lock out. Open source technology provides \
-                           a range of deployment options with no restrictions.',
+                    text: 'No lock in. No lock out. Open source technology provides a range of deployment options with no restrictions.',
                     btnLabel : 'GO/CODE',
                     btnHref : '#'
                 },
                 {
                     img : 'modules/home/img/big/big2.jpg',
                     title: 'ACCESIBLE',
-                    text : 'Cloud-based platform with transparent pricing and \
-                            usage allows for easy management of projects without \
-                            long approval cycles.',
+                    text : 'Cloud-based platform with transparent pricing and usage allows for easy management of projects without long approval cycles.',
                     btnLabel : 'GO/CODE',
                     btnHref : '#'
                 },
                 {
                     img : 'modules/home/img/big/big3.jpg',
                     title: 'SIMPLE',
-                    text : 'Anyone can create a DevOps environment with easy \
-                            one-clicks installs.',
+                    text : 'Anyone can create a DevOps environment with easy one-clicks installs.',
                     btnLabel : 'GO/CODE',
                     btnHref : '#'
                 },
@@ -1883,11 +1879,23 @@ angular.module('page').config(['$stateProvider',
 
         var directive = {
             restrict: 'EAC',
-            template: 
+            template:
+            '<link rel="stylesheet" type="text/css" href="modules/preloader/css/garage.css">'+
+            '<div class="uil-garage-css" style="transform:scale(1);">'+
+              '<div class="before-outer"></div>'+
+              '<div class="after-outer"></div>'+
+              '<div class="outer"></div>'+
+              '<div class="inner"></div>'+
+              '<div class="inner"></div>'+
+              '<div class="inner"></div>'+
+              '<div class="inner"></div>'+
+              '<div class="inner"></div>'+
+            '</div>',
+            /*
               '<div class="preloader-progress">' +
                   '<div class="preloader-progress-bar" ' +
                        'ng-style="{width: loadCounter + \'%\'}"></div>' +
-              '</div>',
+              '</div>',*/
             link: link
         };
         return directive;
@@ -1933,7 +1941,8 @@ angular.module('page').config(['$stateProvider',
               $animate.addClass(el, 'preloader-hidden');
               // retore scrollbar
               angular.element('body').css('overflow', '');
-            }, 300);
+            }, 400);
+
           }
 
           function appReady() {
@@ -1943,7 +1952,7 @@ angular.module('page').config(['$stateProvider',
             // a custom event must be used instead
             var off = scope.$on('$viewContentLoaded', function () {
               viewsLoaded ++;
-              // we know there are at least two views to be loaded 
+              // we know there are at least two views to be loaded
               // before the app is ready (1-index.html 2-app*.html)
               if ( viewsLoaded === 2) {
                 // with resolve this fires only once
