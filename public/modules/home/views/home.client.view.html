@@ -1,17 +1,19 @@
 <div ng-controller="HomeController">
-    <flex-slider class="home-carousel"  flex-slide="s in slides track by $index" direction-nav=false>
-        <li>
-            <center class="carousel-wrap">
-              <img ng-src="{{s.img}}">
-              <div class="carousel-darklayer" "></div>
-              <div class="carousel-text col-lg-5 col-md-8 col-sm-8">
-                <h1>{{s.title}}</h1>
-                <p>{{s.text}}</p>
-                <a class="btn btn-larger btn-slideshow green " href="{{s.btnHref}}">{{s.btnLabel}}</a>
-              </div>
-            </center>
-        </li>
-    </flex-slider>
+    <article id="intro">
+      <flex-slider class="home-carousel"  flex-slide="s in slides track by $index" direction-nav=false>
+          <li>
+              <center class="carousel-wrap">
+                <img ng-src="{{s.img}}">
+                <div class="carousel-darklayer" "></div>
+                <div class="carousel-text col-lg-5 col-md-8 col-sm-8">
+                  <h1>{{s.title}}</h1>
+                  <p>{{s.text}}</p>
+                  <a class="btn btn-larger btn-slideshow green " href="{{s.btnHref}}">{{s.btnLabel}}</a>
+                </div>
+              </center>
+          </li>
+      </flex-slider>
+    </article>
 
     <article id="features" class="main">
         <section class="container">
@@ -94,7 +96,7 @@
         </section>
     </article>
 
-    <article class="building">
+    <article id="pricing" class="building">
         <section class="container">
             <div class="content-panel">
               <h3 class="pricing-title">Simple Pricing Plan</h3><br>
@@ -109,7 +111,7 @@
                       <span>1 CPU/Core</span><br>
                       <span>10GB SSD Storage</span><br>
                       <span >25GB Data Transfer</span><br><br>
-                      <span class="price-permonth">5$ per month</span>
+                      <span class="price-permonth">$5 per month</span>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-offset-2 col-lg-offset-2 col-md-7 col-lg-7">
@@ -124,7 +126,7 @@
                       <span ng-bind="plan_info.datatransfer">25GB Data Transfer</span><br>
                       <hr>
                       <div class="price">
-                        <span ng-bind="plan_info.price"></span>$ per month
+                        $<span ng-bind="plan_info.price"></span> per month
                       </div>
                   </div>
                   <rzslider

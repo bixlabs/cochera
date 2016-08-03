@@ -8,6 +8,7 @@ angular
             $scope.brandSmall = APP_BRAND.SMALL;
             $rootScope.loginStatus = false;
             $scope.isCollapsed = true;
+            $scope.communityUrl = "http://ghost.dg-infra.thedigitalgarage.io";
 
             $scope.registerUrl = Auth.register();
 

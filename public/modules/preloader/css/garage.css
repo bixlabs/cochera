@@ -1,344 +1,340 @@
 width: 100%;
 @-webkit-keyframes uil-battery-anim4 {
   0% {
-    opacity: 1;
     background: #7fc241;
   }
-  10% {
-    opacity: 1;
-    background: #7fc241;
-  }
-  30% {
-    opacity: 0;
+  20% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @-ms-keyframes uil-battery-anim4 {
   0% {
-    opacity: 1;
     background: #7fc241;
   }
-  10% {
-    opacity: 1;
-    background: #7fc241;
-  }
-  30% {
-    opacity: 0;
+  20% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @-o-keyframes uil-battery-anim4 {
   0% {
-    opacity: 1;
     background: #7fc241;
   }
-  10% {
-    opacity: 1;
-    background: #7fc241;
-  }
-  30% {
-    opacity: 0;
+  20% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @-moz-keyframes uil-garage-anim4 {
   0% {
-    opacity: 1;
     background: #7fc241;
   }
-  10% {
-    opacity: 1;
-    background: #7fc241;
-  }
-  30% {
-    opacity: 0;
+  20% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @keyframes uil-garage-anim4 {
   0% {
-    opacity: 1;
     background: #7fc241;
   }
-  10% {
-    opacity: 1;
-    background: #7fc241;
-  }
-  30% {
-    opacity: 0;
+  20% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 width: 100%;
 @-webkit-keyframes uil-battery-anim3 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  30% {
-    opacity: 1;
+  20% {
     background: #7fc241;
   }
-  50% {
-    opacity: 0;
+  40% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @-ms-keyframes uil-battery-anim3 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  30% {
-    opacity: 1;
+  20% {
     background: #7fc241;
   }
-  50% {
-    opacity: 0;
+  40% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @-o-keyframes uil-battery-anim3 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  30% {
-    opacity: 1;
+  20% {
     background: #7fc241;
   }
-  50% {
-    opacity: 0;
+  40% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @-moz-keyframes uil-garage-anim3 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  30% {
-    opacity: 1;
+  40% {
     background: #7fc241;
   }
-  50% {
-    opacity: 0;
+  60% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @keyframes uil-garage-anim3 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  30% {
-    opacity: 1;
+  20% {
     background: #7fc241;
   }
-  50% {
-    opacity: 0;
+  40% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 width: 100%;
 @-webkit-keyframes uil-battery-anim2 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  50% {
-    opacity: 1;
+  40% {
     background: #7fc241;
   }
-  70% {
-    opacity: 0;
+  60% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @-ms-keyframes uil-battery-anim2 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  50% {
-    opacity: 1;
+  40% {
     background: #7fc241;
   }
-  70% {
-    opacity: 0;
+  60% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @-o-keyframes uil-battery-anim2 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  50% {
-    opacity: 1;
+  40% {
     background: #7fc241;
   }
-  70% {
-    opacity: 0;
+  60% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @-moz-keyframes uil-garage-anim2 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  50% {
-    opacity: 1;
+  40% {
     background: #7fc241;
   }
-  70% {
-    opacity: 0;
+  60% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 @keyframes uil-garage-anim2 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  50% {
-    opacity: 1;
+  40% {
     background: #7fc241;
   }
-  70% {
-    opacity: 0;
+  60% {
     background: #000;
   }
   100% {
-    opacity: 0;
     background: #000;
   }
 }
 width: 100%;
-@-webkit-keyframes uil-battery-anim2 {
+@-webkit-keyframes uil-battery-anim1 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  70% {
-    opacity: 1;
+  60% {
     background: #7fc241;
   }
+  80% {
+    background: #000;
+  }
   100% {
-    opacity: 1;
     background: #000;
   }
 }
-@-ms-keyframes uil-battery-anim2 {
+@-ms-keyframes uil-battery-anim1 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  70% {
-    opacity: 1;
+  60% {
     background: #7fc241;
   }
+  80% {
+    background: #000;
+  }
   100% {
-    opacity: 1;
     background: #000;
   }
 }
-@-o-keyframes uil-battery-anim2 {
+@-o-keyframes uil-battery-anim1 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  70% {
-    opacity: 1;
+  60% {
     background: #7fc241;
   }
+  80% {
+    background: #000;
+  }
   100% {
-    opacity: 1;
     background: #000;
   }
 }
 @-moz-keyframes uil-garage-anim1 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  70% {
-    opacity: 1;
+  60% {
     background: #7fc241;
   }
+  80% {
+    background: #000;
+  }
   100% {
-    opacity: 1;
     background: #000;
   }
 }
 @keyframes uil-garage-anim1 {
   0% {
-    opacity: 1;
     background: #000;
   }
-  70% {
-    opacity: 1;
+  60% {
+    background: #7fc241;
+  }
+  80% {
+    background: #000;
+  }
+  100% {
+    background: #000;
+  }
+}
+width: 100%;
+@-webkit-keyframes uil-battery-anim0 {
+  0% {
+    background: #000;
+  }
+  60% {
+    background: #000;
+  }
+  80% {
     background: #7fc241;
   }
   100% {
-    opacity: 1;
+    background: #000;
+  }
+}
+@-ms-keyframes uil-battery-anim0 {
+  0% {
+    background: #000;
+  }
+  60% {
+    background: #000;
+  }
+  80% {
+    background: #7fc241;
+  }
+  100% {
+    background: #000;
+  }
+}
+@-o-keyframes uil-battery-anim0 {
+  0% {
+    background: #000;
+  }
+  60% {
+    background: #000;
+  }
+  80% {
+    background: #7fc241;
+  }
+  100% {
+    background: #000;
+  }
+}
+@-moz-keyframes uil-garage-anim0 {
+  0% {
+    background: #000;
+  }
+  60% {
+    background: #000;
+  }
+  80% {
+    background: #7fc241;
+  }
+  100% {
+    background: #000;
+  }
+}
+@keyframes uil-garage-anim0 {
+  0% {
+    background: #000;
+  }
+  60% {
+    background: #000;
+  }
+  80% {
+    background: #7fc241;
+  }
+  100% {
     background: #000;
   }
 }
@@ -396,6 +392,11 @@ width: 100%;
 .uil-garage-css .inner:nth-of-type(8) {
   top: 35px;
   height: 12px;
+  -ms-animation: uil-garage-anim0 2s step-end infinite;
+  -moz-animation: uil-garage-anim0 2s step-end infinite;
+  -webkit-animation: uil-garage-anim0 2s step-end infinite;
+  -o-animation: uil-garage-anim0 2s step-end infinite;
+  animation: uil-garage-anim0 2s step-end infinite;
 }
 .uil-garage-css .inner:nth-of-type(7) {
   top: 52px;

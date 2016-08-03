@@ -148,7 +148,10 @@ angular.element(document).ready(function () {
     'use strict';
 
     // Use Applicaion configuration module to register a new module
-    ApplicationConfiguration.registerModule('app.home', ['rzModule']);
+    ApplicationConfiguration.registerModule('app.home', [
+        'rzModule',
+        'duScroll'
+    ]);
 })();
 (function() {
     'use strict';
@@ -1084,6 +1087,7 @@ angular
             $scope.brandSmall = APP_BRAND.SMALL;
             $rootScope.loginStatus = false;
             $scope.isCollapsed = true;
+            $scope.communityUrl = "http://ghost.dg-infra.thedigitalgarage.io";
 
             $scope.registerUrl = Auth.register();
 

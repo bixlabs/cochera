@@ -36,18 +36,18 @@
   <div class="collapse navbar-collapse" collapse="isCollapsed">
     <!--<div class="collapse navbar-collapse">-->
     <div class="container">
-      <ul class="nav navbar-nav navbar-left">
+      <ul du-spy-context class="nav navbar-nav navbar-left">
         <li class="dropdown active" dropdown>
-          <a href="#">Home</a>
+          <a href="#intro" du-smooth-scroll du-scrollspy>Home</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
-          <a href="#">Features</a>
+          <a href="#features" offset="110"  du-smooth-scroll du-scrollspy>Features</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
-          <a href="#">Pricing</a>
+          <a href="#pricing" offset="110" du-smooth-scroll du-scrollspy>Pricing</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
-          <a href="#">Community</a>
+          <a du-smooth-scroll="intro" href="{{communityUrl}}" target="_blank">Community</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
           <a href="#">About us</a>
