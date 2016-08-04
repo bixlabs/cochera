@@ -1,14 +1,14 @@
 'use strict';
 var auth = {};
 angular
-    .module('app.home').controller('HeaderController', ['APP_BRAND', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth',
-        function (APP_BRAND, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth) {
+    .module('app.home').controller('HeaderController', ['APP_BRAND', 'GHOST', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth',
+        function (APP_BRAND, GHOST, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth) {
 
             $scope.brand = APP_BRAND.BIG;
             $scope.brandSmall = APP_BRAND.SMALL;
             $rootScope.loginStatus = false;
             $scope.isCollapsed = true;
-            $scope.communityUrl = "http://ghost.dg-infra.thedigitalgarage.io";
+            $scope.communityUrl =  GHOST.URL;
 
             $scope.registerUrl = Auth.register();
 
