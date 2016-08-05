@@ -45,6 +45,10 @@
 				.state('home.main', {
 					url: '/',
 					templateUrl: 'modules/home/views/home.client.view.html'
+				})
+				.state('home.about', {
+					url: '/about',
+					templateUrl: 'modules/home/views/about.client.view.html'
 				});
 		}
 })();

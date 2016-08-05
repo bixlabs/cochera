@@ -310,6 +310,9 @@ ApplicationConfiguration.registerModule('page');
             SMALL : 'modules/core/img/brand/dg-full.png',
             BIG : 'modules/core/img/brand/dg-full.png'
         })
+        .constant('GHOST', {
+          URL: 'http://apps.thedigitalgarage.io/community/'
+        })
         .constant('DATE_FORMATS', {
             EN_DATE_TIME : "MM/dd/yyyy 'at' h:mm a"
         })
@@ -1066,28 +1069,56 @@ angular.module('app.core').service('Menus', [
 				.state('home.main', {
 					url: '/',
 					templateUrl: 'modules/home/views/home.client.view.html'
+				})
+				.state('home.about', {
+					url: '/about',
+					templateUrl: 'modules/home/views/about.client.view.html'
 				});
 		}
 })();
 
 'use strict';
 
-angular.module('app.home').controller('FooterController', ['$scope',
-  function ($scope) {
+angular.module('app.home').controller('FooterController', ['$scope', '$document', '$location', '$timeout', '$anchorScroll',
+  function ($scope, $document, $location, $timeout, $anchorScroll) {
     $scope.brand = 'The Digital Garage';
+
+
+    $scope.redirectScroll = function (url, elem) {
+        var element = angular.element(document.getElementById(elem));
+        if(url === $location.path()){
+            $document.scrollToElementAnimated(element, 100, 600);
+        } else {
+            $location.path(url);
+            $location.hash(elem);
+            $anchorScroll.yOffset = 110;
+        }
+
+    };
+
+
+
   }
 ]);
 'use strict';
 var auth = {};
 angular
-    .module('app.home').controller('HeaderController', ['APP_BRAND', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth',
-        function (APP_BRAND, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth) {
+    .module('app.home').controller('HeaderController', ['APP_BRAND', 'GHOST', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth', '$location',
+        function (APP_BRAND, GHOST, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth, $location) {
 
             $scope.brand = APP_BRAND.BIG;
             $scope.brandSmall = APP_BRAND.SMALL;
             $rootScope.loginStatus = false;
             $scope.isCollapsed = true;
-            $scope.communityUrl = "http://ghost.dg-infra.thedigitalgarage.io";
+            $scope.communityUrl =  GHOST.URL;
+
+            $scope.isActive = function (viewLocation) {
+                return viewLocation === $location.path();
+            };
+
+            $scope.redirect = function(url) {
+                $location.path(url);
+            }
 
             $scope.registerUrl = Auth.register();
 

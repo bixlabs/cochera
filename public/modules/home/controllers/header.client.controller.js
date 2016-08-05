@@ -1,14 +1,22 @@
 'use strict';
 var auth = {};
 angular
-    .module('app.home').controller('HeaderController', ['APP_BRAND', 'GHOST', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth',
-        function (APP_BRAND, GHOST, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth) {
+    .module('app.home').controller('HeaderController', ['APP_BRAND', 'GHOST', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth', '$location',
+        function (APP_BRAND, GHOST, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth, $location) {
 
             $scope.brand = APP_BRAND.BIG;
             $scope.brandSmall = APP_BRAND.SMALL;
             $rootScope.loginStatus = false;
             $scope.isCollapsed = true;
             $scope.communityUrl =  GHOST.URL;
+
+            $scope.isActive = function (viewLocation) {
+                return viewLocation === $location.path();
+            };
+
+            $scope.redirect = function(url) {
+                $location.path(url);
+            }
 
             $scope.registerUrl = Auth.register();
 
