@@ -163,7 +163,7 @@ angular.module('app.home').controller('HomeController', ['$scope',
                 },
                 {
                     img : 'modules/home/img/big/big2.jpg',
-                    title: 'ACCESIBLE',
+                    title: 'ACCESSIBLE',
                     text : 'Cloud-based platform with transparent pricing and usage allows for easy management of projects without long approval cycles.',
                     btnLabel : 'GO/CODE',
                     btnHref : '#'
@@ -171,7 +171,7 @@ angular.module('app.home').controller('HomeController', ['$scope',
                 {
                     img : 'modules/home/img/big/big3.jpg',
                     title: 'SIMPLE',
-                    text : 'Anyone can create a DevOps environment with easy one-clicks installs.',
+                    text : 'Anyone can create a DevOps environment with easy one-click installs.',
                     btnLabel : 'GO/CODE',
                     btnHref : '#'
                 },
