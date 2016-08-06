@@ -15,8 +15,8 @@
           'mobile':                 480
         })
         .constant('APP_BRAND', {
-            SMALL : 'modules/core/img/brand/dg-full.png',
-            BIG : 'modules/core/img/brand/dg-full.png'
+            SMALL : 'modules/core/img/brand/dg-full-light.png',
+            BIG : 'modules/core/img/brand/dg-full-light.png'
         })
         .constant('GHOST', {
           URL: 'http://apps.thedigitalgarage.io/community/'

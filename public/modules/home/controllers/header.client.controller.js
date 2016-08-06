@@ -1,8 +1,9 @@
 'use strict';
 var auth = {};
 angular
-    .module('app.home').controller('HeaderController', ['APP_BRAND', 'GHOST', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth', '$location',
-        function (APP_BRAND, GHOST, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth, $location) {
+    .module('app.home').controller('HeaderController', ['APP_BRAND', 'GHOST', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth', '$location', '$timeout', '$document',
+        function (APP_BRAND, GHOST, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth, $location, $timeout, $document
+            ) {
 
             $scope.brand = APP_BRAND.BIG;
             $scope.brandSmall = APP_BRAND.SMALL;
@@ -14,9 +15,6 @@ angular
                 return viewLocation === $location.path();
             };
 
-            $scope.redirect = function(url) {
-                $location.path(url);
-            }
 
             $scope.registerUrl = Auth.register();
 

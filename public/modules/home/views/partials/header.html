@@ -36,21 +36,21 @@
   <div class="collapse navbar-collapse" collapse="isCollapsed">
     <!--<div class="collapse navbar-collapse">-->
     <div class="container">
-      <ul du-spy-context class="nav navbar-nav navbar-left">
+      <ul class="nav navbar-nav navbar-left">
         <li class="dropdown ng-scope" dropdown>
-         <a du-smooth-scroll="intro" ng-class="{ active: isActive('/')}" ng-click="redirect('/')" du-scrollspy>Home</a>
-         </li>
-        <li class="dropdown ng-scope" dropdown>
-          <a href="#features" du-smooth-scroll offset="110" du-scrollspy>Features</a>
+         <a  class-on-active-link="active" href="#/"  >Home</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
-          <a href="#pricing" offset="110" du-smooth-scroll du-scrollspy>Pricing</a>
+          <a  href="#/#features" offset="110" redirect-scroll du-scrollspy>Features</a>
+        </li>
+        <li class="dropdown ng-scope" dropdown>
+          <a href="#/#pricing" offset="110" redirect-scroll du-scrollspy>Pricing</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
           <a  href="{{communityUrl}}" target="_blank">Community</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
-          <a ng-class="{ active: isActive('/about')}" href="#/about">About us</a>
+          <a ng-class="{ active: isActive('/about')}" href="#/about" >About Us</a>
         </li>
         <!--
         <li class="dropdown ng-scope" dropdown>

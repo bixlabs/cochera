@@ -307,8 +307,8 @@ ApplicationConfiguration.registerModule('page');
           'mobile':                 480
         })
         .constant('APP_BRAND', {
-            SMALL : 'modules/core/img/brand/dg-full.png',
-            BIG : 'modules/core/img/brand/dg-full.png'
+            SMALL : 'modules/core/img/brand/dg-full-light.png',
+            BIG : 'modules/core/img/brand/dg-full-light.png'
         })
         .constant('GHOST', {
           URL: 'http://apps.thedigitalgarage.io/community/'
@@ -1061,14 +1061,25 @@ angular.module('app.core').service('Menus', [
 
 			$stateProvider
 				.state('home', {
-					// url: '/',
+					//url: '/',
 					abstract: true,
 					templateUrl: 'modules/home/views/layout.client.view.html',
 					resolve: helper.resolveFor('modernizr', 'icons')
 				})
 				.state('home.main', {
 					url: '/',
-					templateUrl: 'modules/home/views/home.client.view.html'
+					views: {
+						'' : {
+							templateUrl: 'modules/home/views/home.client.view.html',
+						},
+						'features@home.main': {
+			                templateUrl: 'modules/home/views/partials/features.html'
+			            },
+			            'pricing@home.main': {
+			                templateUrl: 'modules/home/views/partials/pricing.html'
+			            },
+
+					}
 				})
 				.state('home.about', {
 					url: '/about',
@@ -1079,22 +1090,9 @@ angular.module('app.core').service('Menus', [
 
 'use strict';
 
-angular.module('app.home').controller('FooterController', ['$scope', '$document', '$location', '$timeout', '$anchorScroll',
-  function ($scope, $document, $location, $timeout, $anchorScroll) {
+angular.module('app.home').controller('FooterController', ['$scope', '$document', '$location', '$timeout',
+  function ($scope, $document, $location, $timeout) {
     $scope.brand = 'The Digital Garage';
-
-
-    $scope.redirectScroll = function (url, elem) {
-        var element = angular.element(document.getElementById(elem));
-        if(url === $location.path()){
-            $document.scrollToElementAnimated(element, 100, 600);
-        } else {
-            $location.path(url);
-            $location.hash(elem);
-            $anchorScroll.yOffset = 110;
-        }
-
-    };
 
 
 
@@ -1103,8 +1101,9 @@ angular.module('app.home').controller('FooterController', ['$scope', '$document'
 'use strict';
 var auth = {};
 angular
-    .module('app.home').controller('HeaderController', ['APP_BRAND', 'GHOST', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth', '$location',
-        function (APP_BRAND, GHOST, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth, $location) {
+    .module('app.home').controller('HeaderController', ['APP_BRAND', 'GHOST', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth', '$location', '$timeout', '$document',
+        function (APP_BRAND, GHOST, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth, $location, $timeout, $document
+            ) {
 
             $scope.brand = APP_BRAND.BIG;
             $scope.brandSmall = APP_BRAND.SMALL;
@@ -1116,9 +1115,6 @@ angular
                 return viewLocation === $location.path();
             };
 
-            $scope.redirect = function(url) {
-                $location.path(url);
-            }
 
             $scope.registerUrl = Auth.register();
 
@@ -1393,7 +1389,7 @@ angular.module('app.home').controller('HomeController', ['$scope',
                 },
                 {
                     img : 'modules/home/img/big/big2.jpg',
-                    title: 'ACCESIBLE',
+                    title: 'ACCESSIBLE',
                     text : 'Cloud-based platform with transparent pricing and usage allows for easy management of projects without long approval cycles.',
                     btnLabel : 'GO/CODE',
                     btnHref : '#'
@@ -1401,7 +1397,7 @@ angular.module('app.home').controller('HomeController', ['$scope',
                 {
                     img : 'modules/home/img/big/big3.jpg',
                     title: 'SIMPLE',
-                    text : 'Anyone can create a DevOps environment with easy one-clicks installs.',
+                    text : 'Anyone can create a DevOps environment with easy one-click installs.',
                     btnLabel : 'GO/CODE',
                     btnHref : '#'
                 },
@@ -1482,6 +1478,27 @@ angular.module('app.home')
             }
         };
     });
+'use strict';
+
+angular.module('app.home')
+    .directive('redirectScroll', ['$location', '$document', '$anchorScroll',
+        function($location, $document, $anchorScroll) {
+          return function(scope, element, attr, attrs) {
+                var clicCallback = function() {
+                    var url = attr.href.split("#")[1];
+                    var hash = attr.href.split("#")[2];
+                    var el = angular.element(document.getElementById(hash));
+                    if(url === $location.path()){
+                        $document.scrollTo(el, 110, 500);
+                    } else {
+                        $location.hash(hash);
+                        $anchorScroll.yOffset = 110;
+                    }
+                };
+                element.bind('click', clicCallback);
+              }
+            }]);
+
 'use strict';
 
 /* Edits by Thomas  */

@@ -37,14 +37,25 @@
 
 			$stateProvider
 				.state('home', {
-					// url: '/',
+					//url: '/',
 					abstract: true,
 					templateUrl: 'modules/home/views/layout.client.view.html',
 					resolve: helper.resolveFor('modernizr', 'icons')
 				})
 				.state('home.main', {
 					url: '/',
-					templateUrl: 'modules/home/views/home.client.view.html'
+					views: {
+						'' : {
+							templateUrl: 'modules/home/views/home.client.view.html',
+						},
+						'features@home.main': {
+			                templateUrl: 'modules/home/views/partials/features.html'
+			            },
+			            'pricing@home.main': {
+			                templateUrl: 'modules/home/views/partials/pricing.html'
+			            },
+
+					}
 				})
 				.state('home.about', {
 					url: '/about',

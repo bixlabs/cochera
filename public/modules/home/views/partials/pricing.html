@@ -1,0 +1,48 @@
+<section class="container">
+            <div class="content-panel">
+              <h3 class="pricing-title">Simple Pricing Plan</h3><br>
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                    <div class="pricing-box-info">
+                      <p>Digital Garage offers an introductory <b>HELLO WORLD</b> package to get your development environment started. As your development needs grow, you can adjust your resources at any point in time - no need to wait. No surprises and no long-term commitments.</p>
+                    </div>
+                    <div class="pricing-box">
+                      <h4>HELLO WORLD</h4>
+                      <span></span>512MB Memory<br>
+                      <span>1 CPU/Core</span><br>
+                      <span>10GB SSD Storage</span><br>
+                      <span >25GB Data Transfer</span><br><br>
+                      <span class="price-permonth">$5 per month</span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-offset-2 col-lg-offset-2 col-md-7 col-lg-7">
+                  <div class="pricing-calculator">
+                      <h4>What You Pay</h4>
+                      <span ng-bind="plan_info.memory"></span> Memory<br>
+                      <hr>
+                      <span ng-bind="plan_info.cpu">1 CPU/Core</span><br>
+                      <hr>
+                      <span ng-bind="plan_info.storage">10GB SSD Storage</span><br>
+                      <hr>
+                      <span ng-bind="plan_info.datatransfer">25GB Data Transfer</span><br>
+                      <hr>
+                      <div class="price">
+                        $<span ng-bind="plan_info.price"></span> per month
+                      </div>
+                  </div>
+                  <rzslider
+                      rz-slider-model="slider_plan.value"
+                      rz-slider-options="slider_plan.options"></rzslider>
+
+                  <div class="pricing-gocode">
+                    <a href="#" class="btn btn-larger green ">GO/CODE</a>
+                  </div>
+                  <div class="col-xs-12 text-center">
+                    <a href="#" class="pricing-moreinfo">More info</a><br>
+                    Contact us for pricing beyond 20GB of memory.
+                  </div>
+
+                </div>
+              </div>
+            </div>
+        </section>

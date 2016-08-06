@@ -52,7 +52,7 @@ strong {
   -moz-transition: all 0.7s ease-in-out;
   -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
-  background-color: #fff;
+  background-color: #000; /*#191919;*/
 }
 .navbar.fixed-no-top {
   background: rgba(255, 255, 255, 0.9);
@@ -133,8 +133,8 @@ strong {
 .navbar-search-input .form-control{
   border: none !important;
   border-radius: 0px !important;
+  background-color: transparent;
   @media @mobile-s {
-    background-color: transparent;
     color: white;
   }
   @media @upto-tablet {
@@ -146,6 +146,7 @@ strong {
 .navbar-search-input  button {
   border: 0;
   background: none;
+  color: @green-main;
   @media @mobile-s {
     color: @green-main;
   }
@@ -158,7 +159,7 @@ strong {
   margin-top: 26px;
   text-align: right;
   @media @upto-tablet {
-    background: white none repeat scroll 0 0;
+    background: black none repeat scroll 0 0;
     margin-bottom: 33px;
     margin-right: 0;
     margin-top: -64px;
@@ -187,10 +188,10 @@ strong {
 
 .navbar .navbar-collapse {
   background: rgba(100, 100, 100, .5);
-  margin-top: 20px;
+  margin-top: 21px;
   border-bottom: 2px solid #A0D11F;
   @media @mobile-s {
-    margin-top: 0px;
+    margin-top: 1px;
   }
   @media @upto-tablet {
     margin-top: 0px;
@@ -682,21 +683,37 @@ strong {
 #partnerships {
   padding-top: 30px;
   padding-bottom: 40px;
-  background-color: #efefef;
+  background-color: #fff;
   h3 {
     margin-top: 10px;
   }
+  ul {
+    margin-top: 45px;
+  }
 }
 
-#careers {
+#team {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #fff;
-
+  background-color: #efefef;
+  .row {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
   h3 {
     margin-top: 0px;
   }
 
+}
+
+#johnquote {
+  margin-top: 20px;
+  p {
+    font-size: 22px;
+  }
+  .quotes {
+    font-size: 26px;
+  }
 }
 
 

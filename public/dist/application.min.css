@@ -12909,7 +12909,8 @@ strong {
   -moz-transition: all 0.7s ease-in-out;
   -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
-  background-color: #fff;
+  background-color: #000;
+  /*#191919;*/
 }
 .navbar.fixed-no-top {
   background: rgba(255, 255, 255, 0.9);
@@ -12996,10 +12997,10 @@ strong {
 .navbar-search-input .form-control {
   border: none !important;
   border-radius: 0px !important;
+  background-color: transparent;
 }
 @media only screen and (max-width: 480px) {
   .navbar-search-input .form-control {
-    background-color: transparent;
     color: white;
   }
 }
@@ -13012,6 +13013,7 @@ strong {
 .navbar-search-input button {
   border: 0;
   background: none;
+  color: #9BCA22;
 }
 @media only screen and (max-width: 480px) {
   .navbar-search-input button {
@@ -13029,7 +13031,7 @@ strong {
 }
 @media only screen and (max-width: 767px) {
   .navbar-buttoms {
-    background: white none repeat scroll 0 0;
+    background: black none repeat scroll 0 0;
     margin-bottom: 33px;
     margin-right: 0;
     margin-top: -64px;
@@ -13059,12 +13061,12 @@ strong {
 }
 .navbar .navbar-collapse {
   background: rgba(100, 100, 100, 0.5);
-  margin-top: 20px;
+  margin-top: 21px;
   border-bottom: 2px solid #A0D11F;
 }
 @media only screen and (max-width: 480px) {
   .navbar .navbar-collapse {
-    margin-top: 0px;
+    margin-top: 1px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -13551,18 +13553,34 @@ strong {
 #partnerships {
   padding-top: 30px;
   padding-bottom: 40px;
-  background-color: #efefef;
+  background-color: #fff;
 }
 #partnerships h3 {
   margin-top: 10px;
 }
-#careers {
+#partnerships ul {
+  margin-top: 45px;
+}
+#team {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #fff;
+  background-color: #efefef;
 }
-#careers h3 {
+#team .row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+#team h3 {
   margin-top: 0px;
+}
+#johnquote {
+  margin-top: 20px;
+}
+#johnquote p {
+  font-size: 22px;
+}
+#johnquote .quotes {
+  font-size: 26px;
 }
 /* ---------- SignIn Styles ----------- */
 /* Login Styles */
