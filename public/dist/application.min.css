@@ -13573,6 +13573,15 @@ strong {
 #team h3 {
   margin-top: 0px;
 }
+#johnquote {
+  margin-top: 20px;
+}
+#johnquote p {
+  font-size: 22px;
+}
+#johnquote .quotes {
+  font-size: 26px;
+}
 /* ---------- SignIn Styles ----------- */
 /* Login Styles */
 @media (min-width: 451px) {
