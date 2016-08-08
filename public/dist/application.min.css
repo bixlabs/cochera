@@ -12909,8 +12909,7 @@ strong {
   -moz-transition: all 0.7s ease-in-out;
   -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
-  background-color: #000;
-  /*#191919;*/
+  background-color: #fff;
 }
 .navbar.fixed-no-top {
   background: rgba(255, 255, 255, 0.9);
@@ -13031,7 +13030,7 @@ strong {
 }
 @media only screen and (max-width: 767px) {
   .navbar-buttoms {
-    background: black none repeat scroll 0 0;
+    background: white none repeat scroll 0 0;
     margin-bottom: 33px;
     margin-right: 0;
     margin-top: -64px;
@@ -13543,9 +13542,10 @@ strong {
 }
 .team-member img {
   float: left;
-  width: 170px;
-  height: 170px;
-  margin-right: 15px;
+  width: 160px;
+  height: 200px;
+  margin-top: 5px;
+  margin-right: 10px;
 }
 .team-member p {
   margin-top: -5px;
@@ -13572,15 +13572,6 @@ strong {
 }
 #team h3 {
   margin-top: 0px;
-}
-#johnquote {
-  margin-top: 20px;
-}
-#johnquote p {
-  font-size: 22px;
-}
-#johnquote .quotes {
-  font-size: 26px;
 }
 /* ---------- SignIn Styles ----------- */
 /* Login Styles */
