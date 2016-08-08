@@ -13576,6 +13576,9 @@ strong {
 #johnquote {
   margin-top: 20px;
 }
+#johnquote blockquote {
+  text-align: center;
+}
 #johnquote p {
   font-size: 22px;
 }
