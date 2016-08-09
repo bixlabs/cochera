@@ -13573,17 +13573,27 @@ strong {
 #team h3 {
   margin-top: 0px;
 }
+/*for IE*/
+wbr:after {
+  content: "\00200B";
+}
 #johnquote {
   margin-top: 20px;
+  padding-left: 0px;
 }
 #johnquote blockquote {
-  text-align: center;
+  text-align: right;
+  padding-right: 7px;
+  padding-left: 0px;
+}
+#johnquote blockquote .blockquote-footer {
+  font-size: 19px;
 }
 #johnquote p {
-  font-size: 22px;
+  font-size: 19px;
 }
-#johnquote .quotes {
-  font-size: 26px;
+#johnquote p span.line {
+  display: inline-block;
 }
 /* ---------- SignIn Styles ----------- */
 /* Login Styles */

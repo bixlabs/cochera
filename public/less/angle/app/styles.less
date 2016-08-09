@@ -707,18 +707,28 @@ strong {
 
 }
 
+/*for IE*/
+wbr:after { content: "\00200B"; }
+
 #johnquote {
    margin-top: 20px;
+   padding-left: 0px;
    blockquote{
-    text-align: center;
+    text-align: right;
+    padding-right: 7px;
+    padding-left: 0px;
+    .blockquote-footer{
+      font-size: 19px;
+    }
    }
    p {
-     font-size: 22px;
-   }
-   .quotes {
-     font-size: 26px;
+     font-size: 19px;
+     span.line {
+      display: inline-block;
+    }
    }
  }
+
 
 /* ---------- SignIn Styles ----------- */
 /* Login Styles */
