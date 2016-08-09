@@ -10,7 +10,7 @@
                       <h4>HELLO WORLD</h4>
                       <span></span>512MB Memory<br>
                       <span>1 CPU/Core</span><br>
-                      <span>10GB SSD Storage</span><br>
+                      <span>5GB SSD Storage</span><br>
                       <span >25GB Data Transfer</span><br><br>
                       <span class="price-permonth">$5 per month</span>
                     </div>
@@ -20,11 +20,11 @@
                       <h4>What You Pay</h4>
                       <span ng-bind="plan_info.memory"></span> Memory<br>
                       <hr>
-                      <span ng-bind="plan_info.cpu">1 CPU/Core</span><br>
+                      <span ng-bind="plan_info.cpu"></span><br>
                       <hr>
-                      <span ng-bind="plan_info.storage">10GB SSD Storage</span><br>
+                      <span ng-bind="plan_info.storage"></span> <b>*</b><br>
                       <hr>
-                      <span ng-bind="plan_info.datatransfer">25GB Data Transfer</span><br>
+                      <span ng-bind="plan_info.datatransfer"></span> <b>*</b><br>
                       <hr>
                       <div class="price">
                         $<span ng-bind="plan_info.price"></span> per month
@@ -38,9 +38,14 @@
                     <a href="#" class="btn btn-larger green ">GO/CODE</a>
                   </div>
                   <div class="col-xs-12 text-center">
+                    <span class="pricing-faq">
+                      <span class="pricing-moreinfo"> * </span>Please visit our <a href="#" class="pricing-faq-link" >FAQ</a> section for additional Storage and Data Transfer pricing and terms.
+                    </span>
+                    <br>
                     <a href="#" class="pricing-moreinfo">More info</a><br>
                     Contact us for pricing beyond 20GB of memory.
                   </div>
+
 
                 </div>
               </div>

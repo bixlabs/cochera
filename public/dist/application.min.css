@@ -14151,6 +14151,16 @@ ul.pagination > li > span:hover {
 .pricing-moreinfo:hover {
   color: #9BCA22;
 }
+.pricing-faq {
+  font-size: 12px;
+}
+.pricing-faq-link {
+  color: #9BCA22;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 25px;
+  font-size: 14px;
+}
 .pricing-calculator {
   background-color: #fff;
   color: #9BCA22;

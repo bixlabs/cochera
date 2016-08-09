@@ -7,7 +7,7 @@ angular.module('app.home').controller('HomeController', ['$scope',
         {
             memory:"512MB",
             cpu:"1 CPU/Core",
-            storage:"10GB SSD Storage",
+            storage:"5GB SSD Storage",
             datatransfer:"25GB Data Transfer",
             price:"5"
         },
