@@ -31,6 +31,8 @@ module.exports = function(Ghost) {
 
     function authRequest(cb, res) {
         request.post(process.env.GHOST_URL + '/ghost/api/v0.1/authentication/token', {form: ghostCredentials}, function (err, res, body) {
+            console.log('ghost url: '+process.env.GHOST_URL+'/ghost/api/v0.1/authentication/token\n');
+            console.log(ghostCredentials);
             if(!err){
                 cb(err, JSON.parse(body).access_token);
             }else{
