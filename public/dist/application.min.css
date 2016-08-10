@@ -12998,28 +12998,23 @@ strong {
   border-radius: 0px !important;
   background-color: transparent;
 }
-@media only screen and (max-width: 480px) {
-  .navbar-search-input .form-control {
-    color: white;
-  }
-}
 @media only screen and (max-width: 767px) {
   .navbar-search-input .form-control {
     background-color: transparent;
     color: white;
   }
-}
-.navbar-search-input .form-control::-webkit-input-placeholder {
-  color: white;
-}
-.navbar-search-input .form-control:-moz-placeholder {
-  color: white;
-}
-.navbar-search-input .form-control::-moz-placeholder {
-  color: white;
-}
-.navbar-search-input .form-control:-ms-input-placeholder {
-  color: white;
+  .navbar-search-input .form-control::-webkit-input-placeholder {
+    color: white;
+  }
+  .navbar-search-input .form-control:-moz-placeholder {
+    color: white;
+  }
+  .navbar-search-input .form-control::-moz-placeholder {
+    color: white;
+  }
+  .navbar-search-input .form-control:-ms-input-placeholder {
+    color: white;
+  }
 }
 .navbar-search-input button {
   border: 0;
