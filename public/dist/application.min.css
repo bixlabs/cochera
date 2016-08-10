@@ -13009,6 +13009,18 @@ strong {
     color: white;
   }
 }
+.navbar-search-input .form-control::-webkit-input-placeholder {
+  color: white;
+}
+.navbar-search-input .form-control:-moz-placeholder {
+  color: white;
+}
+.navbar-search-input .form-control::-moz-placeholder {
+  color: white;
+}
+.navbar-search-input .form-control:-ms-input-placeholder {
+  color: white;
+}
 .navbar-search-input button {
   border: 0;
   background: none;
