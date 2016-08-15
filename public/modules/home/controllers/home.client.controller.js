@@ -1,7 +1,9 @@
 'use strict';
 
-angular.module('app.home').controller('HomeController', ['$scope',
-  function ($scope) {
+angular.module('app.home').controller('HomeController', ['$scope', 'Auth',
+  function ($scope, Auth) {
+
+    $scope.register_url = Auth.register();
 
     var pricing_plans = [
         {
@@ -159,21 +161,21 @@ angular.module('app.home').controller('HomeController', ['$scope',
                     title : 'OPEN',
                     text: 'No lock in. No lock out. Open source technology provides a range of deployment options with no restrictions.',
                     btnLabel : 'GO/CODE',
-                    btnHref : '#'
+                    btnHref : $scope.register_url
                 },
                 {
                     img : 'modules/home/img/big/big2.jpg',
                     title: 'ACCESSIBLE',
                     text : 'Cloud-based platform with transparent pricing and usage allows for easy management of projects without long approval cycles.',
                     btnLabel : 'GO/CODE',
-                    btnHref : '#'
+                    btnHref : $scope.register_url
                 },
                 {
                     img : 'modules/home/img/big/big3.jpg',
                     title: 'SIMPLE',
                     text : 'Anyone can create a DevOps environment with easy one-click installs.',
                     btnLabel : 'GO/CODE',
-                    btnHref : '#'
+                    btnHref : $scope.register_url
                 },
             ];
 
