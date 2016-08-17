@@ -13062,20 +13062,9 @@ strong {
     color: white;
   }
 }
-.navbar-search-input button {
-  border: 0;
-  background: none;
-  color: #9BCA22;
-}
-@media only screen and (max-width: 480px) {
-  .navbar-search-input button {
-    color: #9BCA22;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .navbar-search-input button {
-    color: #9BCA22;
-  }
+.ui-select-choices-row-inner {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
 }
 .navbar-buttoms {
   margin-top: 26px;

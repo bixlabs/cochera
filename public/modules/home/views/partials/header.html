@@ -26,7 +26,7 @@
             <ui-select-choices
                   repeat="entries in ctrl.ghostEntries | filter:$select.search track by $index"
                   group-by="'type'">
-                <span ng-bind-html="entries.title | highlight: $select.search"></span>
+                <span class="" ng-bind-html="entries.title | limitTo:30 | highlight: $select.search"></span><span ng-if="entries.title.length > 30">...</span>
             </ui-select-choices>
         </ui-select>
         <span class="search-icon fa fa-search pull-right"></span>
