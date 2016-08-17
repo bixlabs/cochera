@@ -1,39 +1,46 @@
-<nav class="navbar  frontnav" role="navigation" ng-controller="HeaderController">
+<nav class="navbar  frontnav" role="navigation" ng-controller="HeaderController as ctrl">
 <!--<nav class="navbar  frontnav" role="navigation" ng-controller="HeaderController" ng-class="{flip: 50 >= top()}">-->
   <div class="container" scroll-position="scroll">
     <div class="row">
-      <div class="navbar-header col-md-7 col-sm-5">
-        <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+      <div class="navbar-header col-md-6 col-sm-5">
+        <button type="button" class="navbar-toggle" ng-click="ctrl.isCollapsed = !ctrl.isCollapsed">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand brand-logo-collapsed visible-xs" href="/">
-          <img ng-src="{{ brandSmall }}"/>
+          <img ng-src="{{ ctrl.brandSmall }}"/>
         </a>
         <a class="navbar-brand brand-logo hidden-xs" href="/">
-          <img ng-src="{{ brand }}"/>
+          <img ng-src="{{ ctrl.brand }}"/>
         </a>
       </div>
-       <div class="navbar-search-input col-md-2 col-sm-4">
-          <div class="input-group">
-              <input type="text" class="search-query form-control " placeholder="Search" />
-              <span class="input-group-btn">
-                  <button class="btn " type="button">
-                      <span class="fa fa-search"></span>
-                  </button>
-              </span>
-          </div>
+       <div class="navbar-search-input col-md-3 col-sm-4">
+       <ui-select ng-model="ctrl.selected"
+                  reset-search-input="true"
+                  on-select="ctrl.onSelectCallback($item, $model)"
+                  ng-click="ctrl.loadGhostEntries()">
+            <ui-select-match placeholder="Search"  >
+            </ui-select-match>
+            <ui-select-choices
+                  repeat="entries in ctrl.ghostEntries | filter:$select.search track by $index"
+                  group-by="'type'">
+                <span ng-bind-html="entries.title | highlight: $select.search"></span>
+            </ui-select-choices>
+        </ui-select>
+        <span class="search-icon fa fa-search pull-right"></span>
+        <span ng-show="ctrl.searchIsLoading" class="search-loader-icon fa fa-spinner fa-spin pull-right"></span>
+
       </div>
       <div class="navbar-buttoms col-md-2 col-sm-3">
-        <a class="login-btn" ng-click="keyLogin()">Login</a>
-        <a class="logout-btn" href="{{registerUrl}}">Register</a>
+        <a class="login-btn" ng-click="ctrl.keyLogin()">Login</a>
+        <a class="logout-btn" href="{{ctrl.registerUrl}}">Register</a>
       </div>
     </div>
   </div>
 
-  <div class="collapse navbar-collapse" collapse="isCollapsed">
+  <div class="collapse navbar-collapse" collapse="ctrl.isCollapsed">
     <!--<div class="collapse navbar-collapse">-->
     <div class="container">
       <ul class="nav navbar-nav navbar-left">
@@ -47,26 +54,11 @@
           <a href="#/#pricing" offset="110" redirect-scroll du-scrollspy>Pricing</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
-          <a  href="{{communityUrl}}" target="_blank">Community</a>
+          <a  href="{{ctrl.communityUrl}}" target="_blank">Community</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
-          <a ng-class="{ active: isActive('/about')}" href="#/about" >About Us</a>
+          <a ng-class="{ active: ctrl.isActive('/about')}" href="#/about" >About Us</a>
         </li>
-        <!--
-        <li class="dropdown ng-scope" dropdown>
-          <a ng-click="keyLogin()">Login</a>
-        </li>
-        <li class="dropdown" dropdown>
-          <a id="signup" ng-click="register()">Sign Up</a>
-            <a id="signup" href="{{registerUrl}}">Sign Up</a>
-
-        </li>
-        -->
-        <!--
-        <li class="dropdown" dropdown>
-          <a href="#" ng-click="logoutKeyCloak();">Logout</a>
-        </li>
-        -->
       </ul>
     </div>
   </div><!-- /.navbar-collapse -->

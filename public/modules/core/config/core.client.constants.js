@@ -18,9 +18,6 @@
             SMALL : 'modules/core/img/brand/dg-full.png',
             BIG : 'modules/core/img/brand/dg-full.png'
         })
-        .constant('GHOST', {
-          URL: 'http://apps.thedigitalgarage.io/community/'
-        })
         .constant('DATE_FORMATS', {
             EN_DATE_TIME : "MM/dd/yyyy 'at' h:mm a"
         })

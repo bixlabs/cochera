@@ -4,50 +4,89 @@ var async = require('async');
 var _ = require('lodash');
 
 module.exports = function(Ghost) {
+
+    var ghost_url = process.env.GHOST_URL || 'http://apps.thedigitalgarage.io/community';
+    var ghost_api_base = ghost_url + '/ghost/api/v0.1/';
+
     var API = {
-        ghost_invite: '/ghost/api/v0.1/users',
-        ghost_token: '/ghost/api/v0.1/authentication/token'
+        ghost_invite: ghost_api_base + 'users',
+        ghost_token: ghost_api_base + 'authentication/token'
     };
 
-    var ghostCredentials = {
-        username: process.env.GHOST_ADMIN,
-        password: process.env.GHOST_ADMIN_PASSWORD,
+    var credentials = {
+        username: process.env.GHOST_ADMIN || 'eddsuarez@bixlabs.com',
+        password:  process.env.GHOST_ADMIN_PASSWORD || '01100101e',
         grant_type: 'password',
         client_id: 'ghost-admin',
-        client_secret: process.env.GHOST_CLIENT_SECRET
+        client_secret: process.env.GHOST_CLIENT_SECRET || 'e4fb47ea88df'
     };
 
-    function findGhostUrl(cb) {
-        var url = process.env.GHOST_URL;
-        if(!url){
-            app.models.Url.findOne({where: {name: 'ghost'}}, function (err, res) {
-                cb(err, res.url);
+    function authRequest(cb) {
+        request.post(API.ghost_token, {form: credentials},
+                function (err, res) {
+                    if(!err){
+                        cb(err, JSON.parse(res.body).access_token);
+                    }else{
+                        cb(err);
+                    }
             });
-        }else{
-            cb(null, url);
-        }
-
     }
 
-    function authRequest(cb, res) {
-        request.post(process.env.GHOST_URL + '/ghost/api/v0.1/authentication/token', {form: ghostCredentials}, function (err, res, body) {
-            console.log('ghost url: '+process.env.GHOST_URL+'/ghost/api/v0.1/authentication/token\n');
-            console.log(ghostCredentials);
-            if(!err){
-                cb(err, JSON.parse(body).access_token);
-            }else{
-                console.log('GHOST AUTHENTICATION ERROR!');
-                cb(err);
-            }
+    function api(endpoint, token, cb, limit, filter, fileds) {
+        request({
+                url: ghost_api_base+endpoint,
+                qs: {
+                    limit: limit,
+                    filter: filter,
+                    fields: fileds
+                },
+                headers: {
+                    Authorization: 'Bearer ' + token,
+                    'Content-Type': 'application/json'
+                }
+            },
+            function (err, res) {
+                if(!err){
+                    cb(err, JSON.parse(res.body)[endpoint]);
+                }else{
+                    cb(err);
+                }
+            });
+    }
+
+    Ghost.find = function(cb){
+       async.auto({
+            token: function(cb) {
+                authRequest(cb);
+            },
+            posts: ['token', function (cb, res){
+                api('posts', res.token, cb, 'all', 'status:published');
+            }],
+            tags: ['token', function (cb, res){
+                api('tags', res.token, cb, 'all', 'visibility:public', 'name,slug');
+            }]
+        },function(err, results) {
+            console.log('err = ', err);
+            var data = [];
+            _.forEach(results.posts, function(post) {
+                post.type = "Post";
+                data.push(post);
+            });
+            _.forEach(results.tags, function(tag) {
+                data.push({title:tag.name, url:"tag/"+tag.slug, type:"Tag"});
+            });
+
+            cb(err, data);
         });
     }
 
-    function tokenGhost(cb) {
-        async.auto({
-            url: findGhostUrl,
-            token: ['url', authRequest]
-        }, cb);
-    }
+    Ghost.remoteMethod('find', {
+        accepts: [
+        ],
+        description: "Fetch a paginated set of published posts",
+        http: {path: '/find', verb: 'GET'},
+        returns: {type: 'array', root: true}
+    });
 
     function ghostInvite(email, res, cb) {
         var body = JSON.stringify({
@@ -56,9 +95,9 @@ module.exports = function(Ghost) {
             ]
         });
         var options = {
-            url: res.url + API.ghost_invite,
+            url: API.ghost_invite,
             headers: {
-                Authorization: 'Bearer ' + res.token,
+                Authorization: 'Bearer ' + res,
                 'Content-Type': 'application/json'
             },
             method: 'POST',
@@ -71,7 +110,7 @@ module.exports = function(Ghost) {
 
     Ghost.inviteUser = function (email, cb) {
         async.waterfall([
-            tokenGhost,
+            authRequest,
             async.apply(ghostInvite, email)
         ], cb);
     };

@@ -15,6 +15,7 @@ var ApplicationConfiguration = (function() {
 												'ui.router',
 												'oc.lazyLoad',
 												'cfp.loadingBar',
+												'ui.select',
 												'ngSanitize',
 												'ngResource',
 												'ui.utils',

@@ -15,6 +15,7 @@ var ApplicationConfiguration = (function() {
 												'ui.router',
 												'oc.lazyLoad',
 												'cfp.loadingBar',
+												'ui.select',
 												'ngSanitize',
 												'ngResource',
 												'ui.utils',
@@ -307,11 +308,8 @@ ApplicationConfiguration.registerModule('page');
           'mobile':                 480
         })
         .constant('APP_BRAND', {
-            SMALL : 'modules/core/img/brand/dg-full-light.png',
-            BIG : 'modules/core/img/brand/dg-full-light.png'
-        })
-        .constant('GHOST', {
-          URL: 'http://apps.thedigitalgarage.io/community/'
+            SMALL : 'modules/core/img/brand/dg-full.png',
+            BIG : 'modules/core/img/brand/dg-full.png'
         })
         .constant('DATE_FORMATS', {
             EN_DATE_TIME : "MM/dd/yyyy 'at' h:mm a"
@@ -1094,146 +1092,75 @@ angular.module('app.home').controller('FooterController', ['$scope', '$document'
   function ($scope, $document, $location, $timeout) {
     $scope.brand = 'The Digital Garage';
 
-
+    $scope.mailto = 'jmccawley@thedigitalgarage.io';
+    $scope.linkedin = 'https://www.linkedin.com/company/the-digital-garage';
+    $scope.github = 'https://github.com/thedigitalgarage';
 
   }
 ]);
 'use strict';
-var auth = {};
 angular
-    .module('app.home').controller('HeaderController', ['APP_BRAND', 'GHOST', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth', '$location', '$timeout', '$document',
-        function (APP_BRAND, GHOST, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth, $location, $timeout, $document
+    .module('app.home').controller('HeaderController', ['APP_BRAND', 'Ghost', '$window', '$rootScope', '$scope', '$state', 'ngProgressFactory', '$modal', 'Auth', '$location', '$timeout', '$document',
+        function (APP_BRAND, Ghost, $window, $rootScope, $scope, $state, ngProgressFactory, $modal, Auth, $location, $timeout, $document
             ) {
 
-            $scope.brand = APP_BRAND.BIG;
-            $scope.brandSmall = APP_BRAND.SMALL;
+            var vm = this;
+            vm.brand = APP_BRAND.BIG;
+            vm.brandSmall = APP_BRAND.SMALL;
             $rootScope.loginStatus = false;
-            $scope.isCollapsed = true;
-            $scope.communityUrl =  GHOST.URL;
+            vm.isCollapsed = true;
+            vm.communityUrl = 'http://apps.thedigitalgarage.io/community/';
 
-            $scope.isActive = function (viewLocation) {
+            vm.ghostEntries = [];
+            vm.searchIsLoading = false;
+            vm.loadGhostEntries = function() {
+              if(vm.ghostEntries.length === 0){
+                vm.searchIsLoading = true;
+                Ghost.find().$promise
+                  .then(function(results) {
+                    vm.searchIsLoading = false;
+                    vm.ghostEntries = results;
+                  });
+              }
+            };
+            vm.onSelectCallback = function (item, model){
+              $window.open(vm.communityUrl+item.url, '_blank');
+              vm.selected = undefined;
+            };
+
+            vm.isActive = function (viewLocation) {
                 return viewLocation === $location.path();
             };
 
+            vm.registerUrl = Auth.register();
 
-            $scope.registerUrl = Auth.register();
-
-            function checkStatus() {
+            vm.checkStatus = function() {
                 Auth.checkStatus();
-            }
+            };
 
-            $scope.checkStatus = checkStatus;
-
-            function login() {
+            vm.keyLogin = function() {
                 Auth.keyCloakLogin();
-            }
+            };
 
-            $scope.keyLogin = login;
-
-            $scope.loadUser = function () {
+            vm.loadUser = function () {
                 Auth.loadUser();
             };
 
-            $scope.top = function () {
-                if (document.querySelector(".main"))
-                    return document.querySelector(".main").getBoundingClientRect().top;
-            };
-
-            $scope.loginKeyCloak = function () {
-                $state.go('app.dashboard');
-            };
-
-            $scope.login = function () {
-                $modal.open({
-                    templateUrl: 'modules/home/views/modal/login.client.view.html',
-                    controller: 'LoginController',
-                    size: 'md',
-                    windowClass: 'login'
-                });
-
-            };
-
-            $scope.register = function () {
-
-
-                /*
-                $modal.open({
-                    templateUrl: 'modules/home/views/modal/register.client.view.html',
-                    controller: 'RegisterController',
-                    size: 'md',
-                    windowClass: 'login'
-                });*/
-            };
         }
     ]);
 
-
-/* Modal controllers*/
-
-function login($scope, $state, $modalInstance, $http, toastr, Auth) {
-    $scope.authInfo = {
-        username: '',
-        password: ''
-    };
-    $scope.submitting = false;
-
-
-    $scope.login = function () {
-        $scope.submitting = true;
-        if ($scope.authInfo.username !== '' && $scope.authInfo.password !== '') {
-            Auth.login($scope.authInfo).then(function () {
-                $scope.submitting = false;
-                toastr.success('You are logged in successfully.', 'Success');
-                $state.go('app.dashboard');
-                $modalInstance.close();
-            }).catch(function () {
-                $scope.submitting = false;
-            });
-        }
-        else {
-            toastr.error('Please enter username and password.', 'Error');
-            $scope.submitting = false;
-        }
-    };
-}
-
-function register($scope, $state, $modalInstance, toastr, AccountService) {
-    $scope.registerform = {};
-    $scope.submitting = false;
-
-    $scope.register = function () {
-        $scope.submitting = true;
-        AccountService.register($scope.registerform)
-            .then(function () {
-                toastr.success('Account created, review your email account', 'Success');
-                $modalInstance.close();
-            })
-            .catch(function (err) {
-                $scope.submitting = false;
-                toastr.error(err, 'Error');
-            });
-        console.log($scope.registerform);
-    };
-}
-
-angular
-    .module('app.home')
-    .controller('LoginController', ['$scope', '$state', '$modalInstance', '$http', 'toastr', 'Auth', login]);
-
-angular
-    .module('app.home')
-    .controller('RegisterController', ['$scope', '$state', '$modalInstance', 'toastr', 'AccountService', register]);
-
 'use strict';
 
-angular.module('app.home').controller('HomeController', ['$scope',
-  function ($scope) {
+angular.module('app.home').controller('HomeController', ['$scope', 'Auth',
+  function ($scope, Auth) {
+
+    $scope.register_url = Auth.register();
 
     var pricing_plans = [
         {
             memory:"512MB",
             cpu:"1 CPU/Core",
-            storage:"10GB SSD Storage",
+            storage:"5GB SSD Storage",
             datatransfer:"25GB Data Transfer",
             price:"5"
         },
@@ -1385,21 +1312,21 @@ angular.module('app.home').controller('HomeController', ['$scope',
                     title : 'OPEN',
                     text: 'No lock in. No lock out. Open source technology provides a range of deployment options with no restrictions.',
                     btnLabel : 'GO/CODE',
-                    btnHref : '#'
+                    btnHref : $scope.register_url
                 },
                 {
                     img : 'modules/home/img/big/big2.jpg',
                     title: 'ACCESSIBLE',
                     text : 'Cloud-based platform with transparent pricing and usage allows for easy management of projects without long approval cycles.',
                     btnLabel : 'GO/CODE',
-                    btnHref : '#'
+                    btnHref : $scope.register_url
                 },
                 {
                     img : 'modules/home/img/big/big3.jpg',
                     title: 'SIMPLE',
                     text : 'Anyone can create a DevOps environment with easy one-click installs.',
                     btnLabel : 'GO/CODE',
-                    btnHref : '#'
+                    btnHref : $scope.register_url
                 },
             ];
 

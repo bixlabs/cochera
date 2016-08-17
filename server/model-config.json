@@ -46,6 +46,6 @@
   },
   "ghost": {
     "dataSource": null,
-    "public": false
+    "public": true
   }
 }
