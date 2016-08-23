@@ -27,7 +27,7 @@ angular.module('app.home')
 
 		function login (credentials) {
 			var defer = $q.defer();
-			$http.post('/authChargebee', credentials).success(function (data) {
+			$http.post('authChargebee', credentials).success(function (data) {
 				defer.resolve(data);
 				setUser(data);
 			}).error(function (data) {

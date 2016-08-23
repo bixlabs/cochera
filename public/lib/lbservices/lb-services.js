@@ -13,7 +13,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 (function(window, angular, undefined) {
   'use strict';
 
-  var urlBase = "/api";
+  var urlBase = "/cochera/api";
   var authHeader = 'authorization';
 
   function getHost(url) {
