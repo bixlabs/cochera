@@ -52,7 +52,7 @@ angular.module('app.home')
 			$rootScope.User = false;
 
             //keycloak logout
-            keycloakAuth.logout({redirectUri: window.location.origin});
+            keycloakAuth.logout({redirectUri: window.location.origin+ '/cochera/'});
 		};
 
         this.loadUser =  function(){
@@ -61,7 +61,7 @@ angular.module('app.home')
 
         this.keyCloakLogin= function(){
             vm.auth.loggedIn = false;
-            keycloakAuth.redirectUri = window.location.origin + '/#/dashboard';
+            keycloakAuth.redirectUri = window.location.origin + '/cochera/#/dashboard';
 
             keycloakAuth.init({ onLoad: 'login-required'}).success(function () {
                keycloakAuth.login();

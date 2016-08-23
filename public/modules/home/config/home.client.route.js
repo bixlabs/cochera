@@ -60,6 +60,10 @@
 				.state('home.about', {
 					url: '/about',
 					templateUrl: 'modules/home/views/about.client.view.html'
+				})
+				.state('home.faq', {
+					url: '/faq',
+					templateUrl: 'modules/home/views/faq.client.view.html'
 				});
 		}
 })();

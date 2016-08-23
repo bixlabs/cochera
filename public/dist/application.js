@@ -101,7 +101,7 @@ angular
 
 angular.element(document).ready(function () {
     var keycloakAuth = new Keycloak('keycloak.json');
-    keycloakAuth.redirectUri = window.location.origin + '/#/dashboard';
+    keycloakAuth.redirectUri = window.location.origin + '/cochera/#/dashboard';
     keycloakAuth.init({onLoad: 'check-sso'}).success(function (authorized) {
         console.log('Authorized', authorized);
         //Create factory for keycloak
@@ -315,7 +315,7 @@ ApplicationConfiguration.registerModule('page');
             EN_DATE_TIME : "MM/dd/yyyy 'at' h:mm a"
         })
         .constant('CHARGEBEE_API', {
-            PREFIX : 'chargebee/',
+            PREFIX : '/chargebee/',
             EVENTS : 'events/'
         })
       ;
@@ -1082,10 +1082,34 @@ angular.module('app.core').service('Menus', [
 				.state('home.about', {
 					url: '/about',
 					templateUrl: 'modules/home/views/about.client.view.html'
+				})
+				.state('home.faq', {
+					url: '/faq',
+					templateUrl: 'modules/home/views/faq.client.view.html'
 				});
 		}
 })();
 
+'use strict';
+
+angular.module('app.home')
+.controller('FaqController', ['$scope',
+  function ($scope) {
+    $scope.oneAtATime = true;
+
+      $scope.groups = [
+        {
+          title: 'Dynamic Group Header - 1',
+          content: 'Dynamic Group Body - 1'
+        },
+        {
+          title: 'Dynamic Group Header - 2',
+          content: 'Dynamic Group Body - 2'
+        }
+      ];
+
+  }
+]);
 'use strict';
 
 angular.module('app.home').controller('FooterController', ['$scope', '$document', '$location', '$timeout',
@@ -1599,7 +1623,7 @@ angular.module('app.home')
 			$rootScope.User = false;
 
             //keycloak logout
-            keycloakAuth.logout({redirectUri: window.location.origin});
+            keycloakAuth.logout({redirectUri: window.location.origin+ '/cochera/'});
 		};
 
         this.loadUser =  function(){
@@ -1608,7 +1632,7 @@ angular.module('app.home')
 
         this.keyCloakLogin= function(){
             vm.auth.loggedIn = false;
-            keycloakAuth.redirectUri = window.location.origin + '/#/dashboard';
+            keycloakAuth.redirectUri = window.location.origin + '/cochera/#/dashboard';
 
             keycloakAuth.init({ onLoad: 'login-required'}).success(function () {
                keycloakAuth.login();
@@ -1666,9 +1690,9 @@ angular.module('app.home')
         .constant('APP_REQUIRES', {
           // jQuery based and standalone scripts
           scripts: {
-            'modernizr':          ['/lib/modernizr/modernizr.custom.js'],
-            'icons':              ['/lib/fontawesome/css/font-awesome.min.css',
-                                   '/lib/simple-line-icons/css/simple-line-icons.css']
+            'modernizr':          ['lib/modernizr/modernizr.custom.js'],
+            'icons':              ['lib/fontawesome/css/font-awesome.min.css',
+                                   'lib/simple-line-icons/css/simple-line-icons.css']
           },
           // Angular based script (use the right module name)
           modules: [
@@ -2458,7 +2482,7 @@ angular.module('page').config(['$stateProvider',
     function translateConfig($translateProvider){
 
       $translateProvider.useStaticFilesLoader({
-          prefix : '/i18n/',
+          prefix : 'i18n/',
           suffix : '.json'
       });
 

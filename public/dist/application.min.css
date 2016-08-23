@@ -7762,7 +7762,9 @@ _:-ms-lang(x),
 }
 .nav-wrapper {
   height: 100%;
-  padding: 0 15px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 1px;
   background-color: transparent;
 }
 .nav-wrapper .nav.navbar-nav {
@@ -13636,6 +13638,10 @@ wbr:after {
 }
 #johnquote p span.line {
   display: inline-block;
+}
+/* ---------- FAQ Styles ----------- */
+.faq-wrapper {
+  margin-top: 150px;
 }
 /* ---------- SignIn Styles ----------- */
 /* Login Styles */

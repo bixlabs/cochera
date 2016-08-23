@@ -34,6 +34,10 @@
 
       </div>
       <div class="navbar-buttoms col-md-2 col-sm-3">
+      <!--
+        <a class="login-btn" href="javascript:;">Login</a>
+        <a class="logout-btn" href="javascript:;">Register</a>
+       -->
         <a class="login-btn" ng-click="ctrl.keyLogin()">Login</a>
         <a class="logout-btn" href="{{ctrl.registerUrl}}">Register</a>
       </div>
@@ -54,7 +58,7 @@
           <a href="#/#pricing" offset="110" redirect-scroll du-scrollspy>Pricing</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
-          <a  href="{{ctrl.communityUrl}}" target="_blank">Community</a>
+          <a  href="javascript:;" target="_blank">Community (Coming Soon)</a>
         </li>
         <li class="dropdown ng-scope" dropdown>
           <a ng-class="{ active: ctrl.isActive('/about')}" href="#/about" >About Us</a>

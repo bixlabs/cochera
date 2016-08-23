@@ -1,7 +1,7 @@
 {
   "realm": "master",
   "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj0pTJNfwD+dIqW6MP+Md+dTtQwX/+sIN01q52GDWGXOQb/ghQ8s7mow132lW8yizKH7rsQ5lN133u6RnJDOpQNBHAy7RBwLxWiiANMKBbhPj3Iyd+0/PHAzeKgY9OSdh1xw8d9vIxl91znXWvPhp7s0+sRdccAI0UsBBdu5snp2sDf7lYtxujZWgaJZa193XqhIpPOpOOyMY6z9IcgwbTwrZksRydh2h8wrME6i/1dfSmgq4WDipoZxCo/7MB6RWLPyTvB1BEfvTuaGsvDEPRryeBFHpOzW0n55BoYXt2ok6ASmi5ZUyNQtQs6MaHxBMRfje6fSHI0Kvfgt4BrhDJwIDAQAB",
-  "auth-server-url": "https://keycloak.dg-infra.thedigitalgarage.io/auth",
+  "auth-server-url": "https://dg-infra.thedigitalgarage.io/auth",
   "ssl-required": "external",
   "resource": "cochera",
   "credentials": {

@@ -6,9 +6,9 @@
         .constant('APP_REQUIRES', {
           // jQuery based and standalone scripts
           scripts: {
-            'modernizr':          ['/lib/modernizr/modernizr.custom.js'],
-            'icons':              ['/lib/fontawesome/css/font-awesome.min.css',
-                                   '/lib/simple-line-icons/css/simple-line-icons.css']
+            'modernizr':          ['lib/modernizr/modernizr.custom.js'],
+            'icons':              ['lib/fontawesome/css/font-awesome.min.css',
+                                   'lib/simple-line-icons/css/simple-line-icons.css']
           },
           // Angular based script (use the right module name)
           modules: [

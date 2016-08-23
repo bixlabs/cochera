@@ -57,7 +57,7 @@ angular
 
 angular.element(document).ready(function () {
     var keycloakAuth = new Keycloak('keycloak.json');
-    keycloakAuth.redirectUri = window.location.origin + '/#/dashboard';
+    keycloakAuth.redirectUri = window.location.origin + '/cochera/#/dashboard';
     keycloakAuth.init({onLoad: 'check-sso'}).success(function (authorized) {
         console.log('Authorized', authorized);
         //Create factory for keycloak

@@ -22,7 +22,7 @@
             EN_DATE_TIME : "MM/dd/yyyy 'at' h:mm a"
         })
         .constant('CHARGEBEE_API', {
-            PREFIX : 'chargebee/',
+            PREFIX : '/chargebee/',
             EVENTS : 'events/'
         })
       ;

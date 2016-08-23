@@ -6,7 +6,7 @@
     <em ng-hide="inSubmenu" class="{{item.iconClass}}"></em>
     <span>{{(item.translate | translate) || item.title}}</span>
   </a>
-  <a href="/#/{{item.link}}" title="{{item.title}}" ng-if="!item.items.length">
+  <a href="#/{{item.link}}" title="{{item.title}}" ng-if="!item.items.length">
     <div ng-if="item.alert" ng-class="item.label || 'label label-success'" class="pull-right">{{item.alert}}</div>
     <em ng-hide="inSubmenu" class="{{item.iconClass}}"></em>
     <span>{{(item.translate | translate) || item.title}}</span>

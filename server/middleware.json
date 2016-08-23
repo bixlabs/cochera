@@ -49,6 +49,7 @@
   },
   "files": {
     "loopback#static": {
+      "paths": "/cochera",
       "params": "$!../public"
     }
   },
